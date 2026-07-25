@@ -1,7 +1,8 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
    LAYOUT.CSS
-   FINAL BEIGE & GOLD THEME
+   VERSION 2.0
+   PROFESSIONAL RESPONSIVE SYSTEM
 ======================================================= */
 
 
@@ -9,104 +10,186 @@
    CONTAINER
 ========================================= */
 
+
 .container{
 
     width:100%;
 
     max-width:var(--container);
 
-    margin:0 auto;
+    margin-inline:auto;
 
-    padding-left:1.5rem;
-
-    padding-right:1.5rem;
+    padding-inline:clamp(1.2rem,4vw,2rem);
 
 }
+
+
+
 
 
 /* =========================================
    SECTIONS
 ========================================= */
 
-section{
 
-    padding:var(--section-padding) 0;
+section{
 
     position:relative;
 
+    padding:clamp(4rem,8vw,7rem) 0;
+
 }
+
+
+
 
 
 /* =========================================
-   SECTION HEADER
+   PAGE HEADER
 ========================================= */
 
-.section-header,
-.section-title{
 
-    max-width:750px;
+.page-header{
 
-    margin:0 auto 4rem;
+    padding-top:9rem;
+
+    padding-bottom:4rem;
 
     text-align:center;
 
-}
+    background:
 
+    linear-gradient(
 
-.section-header span,
-.section-title span,
-.section-tag{
+        180deg,
 
-    display:inline-flex;
+        var(--primary-light),
 
-    align-items:center;
+        transparent
 
-    gap:.5rem;
-
-    padding:.45rem 1rem;
-
-    border-radius:var(--radius-round);
-
-    background:var(--primary-light);
-
-    color:var(--secondary-dark);
-
-    font-size:.85rem;
-
-    font-weight:var(--fw-semibold);
-
-    letter-spacing:.5px;
-
-    margin-bottom:1.2rem;
+    );
 
 }
 
 
-.section-header h2,
-.section-title h2{
 
-    font-size:clamp(2rem,4vw,3rem);
+.page-header h1{
+
+    font-size:clamp(2.2rem,5vw,4rem);
 
     margin-bottom:1rem;
 
 }
 
 
+
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+
+.section-header,
+.section-title{
+
+    width:100%;
+
+    max-width:800px;
+
+    margin-inline:auto;
+
+    margin-bottom:4rem;
+
+    text-align:center;
+
+}
+
+
+
+
+.section-header span,
+.section-title span,
+.section-tag{
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    gap:.5rem;
+
+
+    padding:.45rem 1rem;
+
+
+    border-radius:var(--radius-round);
+
+
+    background:var(--primary-light);
+
+
+    color:var(--secondary-dark);
+
+
+    font-size:.85rem;
+
+
+    font-weight:var(--fw-semibold);
+
+
+    letter-spacing:.5px;
+
+
+    margin-bottom:1.2rem;
+
+
+}
+
+
+
+
+.section-header h2,
+.section-title h2{
+
+
+    font-size:clamp(2rem,4vw,3rem);
+
+
+    margin-bottom:1rem;
+
+
+}
+
+
+
+
+
 .section-header p,
 .section-title p{
 
+
+    max-width:680px;
+
+
+    margin-inline:auto;
+
+
     font-size:1rem;
 
-    max-width:650px;
-
-    margin:auto;
 
 }
+
+
+
 
 
 /* =========================================
    GRID SYSTEM
 ========================================= */
+
 
 .grid{
 
@@ -117,9 +200,47 @@ section{
 }
 
 
+
+
+
+.card-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(260px,1fr));
+
+
+    gap:2rem;
+
+}
+
+
+
+
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(220px,1fr));
+
+
+    gap:1.5rem;
+
+}
+
+
+
+
+
 /* =========================================
    FLEX UTILITIES
 ========================================= */
+
 
 .flex{
 
@@ -128,6 +249,23 @@ section{
     align-items:center;
 
 }
+
+
+
+
+
+.flex-between{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+
 
 
 .center{
@@ -141,24 +279,67 @@ section{
 }
 
 
+
+
+
 /* =========================================
-   BUTTON CENTER WRAPPER
+   GLASS EFFECT
 ========================================= */
+
+
+.glass{
+
+
+    background:
+
+    rgba(255,255,255,.55);
+
+
+
+    backdrop-filter:
+
+    var(--blur);
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+}
+
+
+
+
+
+/* =========================================
+   BUTTON CENTER
+========================================= */
+
 
 .center-button{
 
+
     margin-top:3rem;
+
 
     display:flex;
 
+
     justify-content:center;
 
+
 }
+
+
+
 
 
 /* =========================================
    OVERFLOW
 ========================================= */
+
 
 .hidden{
 
@@ -167,9 +348,13 @@ section{
 }
 
 
+
+
+
 /* =========================================
    SPACING UTILITIES
 ========================================= */
+
 
 .mt-1{
 
@@ -190,6 +375,7 @@ section{
     margin-top:3rem;
 
 }
+
 
 
 .mb-1{
@@ -213,33 +399,48 @@ section{
 }
 
 
+
+
+
 /* =========================================
-   RESPONSIVE CONTAINER
+   RESPONSIVE
 ========================================= */
 
+
 @media(max-width:768px){
-
-    .container{
-
-        padding-left:1.2rem;
-
-        padding-right:1.2rem;
-
-    }
-
-
-    section{
-
-        padding:4.5rem 0;
-
-    }
 
 
     .section-header,
     .section-title{
 
-        margin-bottom:3rem;
+
+        margin-bottom:2.5rem;
+
 
     }
+
+
+
+    .center-button{
+
+
+        margin-top:2rem;
+
+
+    }
+
+
+
+    .flex-between{
+
+
+        flex-direction:column;
+
+
+        gap:1rem;
+
+
+    }
+
 
 }
