@@ -2047,3 +2047,311 @@ table tbody tr:last-child td{
 
 
 }
+/* =======================================================
+   DOCUMENT ARCHIVE
+   PREMIUM BEIGE & GOLD DESIGN
+======================================================= */
+
+
+/* =========================================
+   DOCUMENT HERO
+========================================= */
+
+.hero-page{
+
+    min-height:55vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2E241C,
+        #8A6842
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.hero-page::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+
+    height:400px;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(198,161,91,.15);
+
+    right:-120px;
+
+    top:-120px;
+
+}
+
+
+
+.hero-page .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+.hero-page .section-header h2{
+
+    color:white;
+
+}
+
+
+.hero-page .section-header p{
+
+    color:
+
+    rgba(255,255,255,.8);
+
+}
+
+
+
+.hero-page .section-header span{
+
+    color:
+
+    var(--secondary-light);
+
+}
+
+
+
+/* =========================================
+   DOCUMENT GRID
+========================================= */
+
+
+.document-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+    gap:2rem;
+
+}
+
+
+
+
+
+/* =========================================
+   DOCUMENT CARD
+========================================= */
+
+
+.document-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:2rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+    border:
+
+    1px solid rgba(198,161,91,.25);
+
+    box-shadow:
+
+    0 15px 35px rgba(60,45,30,.08);
+
+    transition:.35s ease;
+
+}
+
+
+
+.document-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 25px 50px rgba(60,45,30,.15);
+
+}
+
+
+
+
+
+.document-card h3{
+
+    margin-bottom:.7rem;
+
+    font-size:1.3rem;
+
+}
+
+
+
+
+
+.document-card p{
+
+    font-size:.95rem;
+
+    line-height:1.7;
+
+}
+
+
+
+
+
+.document-card span{
+
+    display:inline-flex;
+
+    width:max-content;
+
+    padding:.4rem 1rem;
+
+    border-radius:50px;
+
+    background:
+
+    var(--primary-light);
+
+    color:
+
+    var(--secondary-dark);
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+}
+
+
+
+
+
+/* =========================================
+   DOCUMENT ICON
+========================================= */
+
+
+.document-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--primary-light),
+        #ffffff
+    );
+
+    color:
+
+    var(--secondary-dark);
+
+    font-size:2rem;
+
+}
+
+
+
+
+
+.document-card .btn{
+
+    margin-top:auto;
+
+    align-self:flex-start;
+
+}
+
+
+
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+
+@media(max-width:992px){
+
+
+    .document-grid{
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+
+@media(max-width:600px){
+
+
+    .document-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .hero-page{
+
+        min-height:50vh;
+
+        text-align:center;
+
+    }
+
+
+}
