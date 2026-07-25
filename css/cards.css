@@ -1,7 +1,7 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
    CARDS.CSS
-   FINAL BEIGE & GOLD THEME
+   PREMIUM BEIGE & GOLD DESIGN
 ======================================================= */
 
 
@@ -9,9 +9,14 @@
    GENERAL CARD
 ========================================= */
 
+
 .card{
 
-    background:var(--surface);
+    background:
+
+    rgba(255,255,255,.85);
+
+    backdrop-filter:blur(12px);
 
     border:1px solid var(--border);
 
@@ -26,9 +31,10 @@
 }
 
 
+
 .card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 
     box-shadow:var(--shadow-lg);
 
@@ -36,18 +42,19 @@
 
 
 
+
+
 /* =========================================
-   OFFICER CARDS
+   OFFICER SECTION
 ========================================= */
+
 
 .officer-grid,
 .officers-grid{
 
     display:grid;
 
-    grid-template-columns:
-
-    repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:2rem;
 
@@ -55,27 +62,43 @@
 
 
 
+
+
 .officer-card{
 
-    background:var(--white);
+    background:
 
-    border-radius:var(--radius-lg);
+    linear-gradient(
 
-    padding:2rem 1.5rem;
+        145deg,
+
+        #ffffff,
+
+        #faf5ed
+
+    );
+
+    border-radius:25px;
+
+    padding:2.2rem 1.5rem;
 
     text-align:center;
 
-    border:1px solid var(--border);
+    border:1px solid rgba(198,161,91,.25);
 
-    box-shadow:var(--shadow);
+    box-shadow:
 
-    transition:var(--transition);
+    0 15px 35px rgba(60,45,30,.08);
+
+    transition:.4s ease;
 
     position:relative;
 
     overflow:hidden;
 
 }
+
+
 
 
 
@@ -91,7 +114,7 @@
 
     width:100%;
 
-    height:5px;
+    height:6px;
 
     background:
 
@@ -99,7 +122,7 @@
 
         90deg,
 
-        var(--secondary),
+        var(--secondary-dark),
 
         var(--secondary-light)
 
@@ -109,24 +132,58 @@
 
 
 
-.officer-card:hover{
 
-    transform:translateY(-10px);
 
-    box-shadow:var(--shadow-lg);
+.officer-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(198,161,91,.08);
+
+    right:-40px;
+
+    bottom:-40px;
 
 }
 
 
 
-/* Officer Image */
+
+
+.officer-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+
+    0 25px 50px rgba(60,45,30,.15);
+
+}
+
+
+
+
+
+/* Officer Photo */
+
 
 .officer-image,
 .officer-card img{
 
-    width:110px;
 
-    height:110px;
+    width:120px;
+
+    height:120px;
 
     margin:0 auto 1.5rem;
 
@@ -142,33 +199,72 @@
 
     background:
 
-    var(--primary-light);
+    linear-gradient(
 
-    border:4px solid var(--secondary-light);
+        135deg,
+
+        var(--primary-light),
+
+        #ffffff
+
+    );
+
+    border:
+
+    5px solid var(--secondary-light);
 
     color:var(--secondary-dark);
 
-    font-size:2.5rem;
+    font-size:2.7rem;
+
+    position:relative;
 
 }
 
 
 
+
+
+.officer-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-10px;
+
+    border-radius:50%;
+
+    border:1px dashed var(--secondary);
+
+    opacity:.5;
+
+}
+
+
+
+
+
 .officer-card .position{
 
-    display:inline-block;
 
-    padding:.4rem 1rem;
+    display:inline-flex;
 
-    border-radius:var(--radius-round);
+    padding:.45rem 1.2rem;
 
-    background:var(--primary-light);
+    border-radius:50px;
 
-    color:var(--secondary-dark);
+    background:
+
+    var(--primary-light);
+
+    color:
+
+    var(--secondary-dark);
 
     font-size:.8rem;
 
-    font-weight:var(--fw-semibold);
+    font-weight:600;
 
     margin-bottom:1rem;
 
@@ -176,9 +272,13 @@
 
 
 
+
+
 .officer-card h3{
 
-    font-size:1.2rem;
+    font-size:1.25rem;
+
+    color:var(--text);
 
     margin-bottom:.5rem;
 
@@ -186,7 +286,13 @@
 
 
 
+
+
 .officer-card p{
+
+    color:var(--text-light);
+
+    line-height:1.7;
 
     font-size:.9rem;
 
@@ -194,9 +300,12 @@
 
 
 
+
+
 /* =========================================
-   ANNOUNCEMENT CARDS
+   ANNOUNCEMENTS
 ========================================= */
+
 
 .announcement-grid{
 
@@ -210,7 +319,10 @@
 
 
 
+
+
 .announcement-feature{
+
 
     background:
 
@@ -218,17 +330,20 @@
 
         135deg,
 
-        var(--primary-light),
+        #f8eddd,
 
-        var(--white)
+        #ffffff
 
     );
 
+
     padding:3rem;
 
-    border-radius:var(--radius-lg);
+    border-radius:25px;
 
-    border:1px solid var(--border);
+    border:
+
+    1px solid rgba(198,161,91,.25);
 
     position:relative;
 
@@ -238,47 +353,55 @@
 
 
 
-.announcement-feature::after{
+
+
+.announcement-feature::before{
 
     content:"";
 
     position:absolute;
 
-    width:200px;
+    width:250px;
 
-    height:200px;
+    height:250px;
 
-    background:var(--secondary-light);
+    background:
 
-    opacity:.2;
+    rgba(198,161,91,.12);
 
     border-radius:50%;
 
-    right:-80px;
+    right:-100px;
 
-    bottom:-80px;
+    top:-100px;
 
 }
+
+
 
 
 
 .badge{
 
-    display:inline-block;
+    display:inline-flex;
 
-    background:var(--secondary);
+    background:
 
-    color:var(--white);
+    var(--secondary);
 
-    padding:.4rem 1rem;
+    color:white;
 
-    border-radius:var(--radius-round);
+    padding:.45rem 1.2rem;
+
+    border-radius:50px;
 
     font-size:.75rem;
 
-    font-weight:var(--fw-bold);
+    font-weight:700;
 
 }
+
+
 
 
 
@@ -292,55 +415,52 @@
 
 
 
+
+
 .announcement-feature a{
 
-    color:var(--secondary-dark);
+    color:
 
-    font-weight:var(--fw-semibold);
+    var(--secondary-dark);
 
-}
-
-
-
-/* Announcement List */
-
-.announcement-list{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:1rem;
+    font-weight:600;
 
 }
+
+
 
 
 
 .announcement-item{
 
-    display:flex;
 
-    align-items:center;
+    display:flex;
 
     justify-content:space-between;
 
+    align-items:center;
+
     padding:1.5rem;
 
-    background:var(--white);
+    background:white;
 
-    border:1px solid var(--border);
+    border-radius:18px;
 
-    border-radius:var(--radius-md);
+    border:
 
-    transition:var(--transition);
+    1px solid var(--border);
+
+    transition:.3s ease;
 
 }
 
 
 
+
+
 .announcement-item:hover{
 
-    transform:translateX(8px);
+    transform:translateX(10px);
 
     border-color:var(--secondary);
 
@@ -348,33 +468,18 @@
 
 
 
-.announcement-item h4{
-
-    margin-bottom:.3rem;
-
-}
-
-
-
-.announcement-item small{
-
-    color:var(--text-muted);
-
-}
-
 
 
 /* =========================================
-   TRANSPARENCY CARDS
+   TRANSPARENCY / PROJECT CARDS
 ========================================= */
+
 
 .transparency-grid{
 
     display:grid;
 
-    grid-template-columns:
-
-    repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:1.5rem;
 
@@ -382,41 +487,56 @@
 
 
 
+
+
 .transparency-card{
 
-    background:var(--white);
 
-    padding:2rem;
+    background:white;
+
+    padding:2.2rem 1.5rem;
 
     text-align:center;
 
-    border-radius:var(--radius-lg);
+    border-radius:22px;
 
-    border:1px solid var(--border);
+    border:
 
-    box-shadow:var(--shadow);
+    1px solid rgba(198,161,91,.25);
 
-    transition:var(--transition);
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.05);
+
+    transition:.35s ease;
 
 }
+
+
 
 
 
 .transparency-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 
-    border-color:var(--secondary);
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.10);
 
 }
 
 
 
+
+
 .transparency-card i{
 
-    font-size:2rem;
+    font-size:2.2rem;
 
-    color:var(--secondary);
+    color:
+
+    var(--secondary);
 
     margin-bottom:1rem;
 
@@ -424,21 +544,27 @@
 
 
 
+
+
 .transparency-card h2{
 
-    color:var(--secondary-dark);
+    color:
 
-    margin-top:1rem;
+    var(--secondary-dark);
 
 }
 
 
 
+
+
 /* =========================================
-   CTA BOX
+   CTA
 ========================================= */
 
+
 .cta-box{
+
 
     background:
 
@@ -446,21 +572,30 @@
 
         135deg,
 
-        var(--primary),
+        #e7d8c9,
 
-        var(--primary-light)
+        #f8efe5
 
     );
 
+
     padding:4rem;
 
-    border-radius:var(--radius-xl);
+    border-radius:30px;
 
     text-align:center;
 
-    border:1px solid var(--border);
+    border:
+
+    1px solid rgba(198,161,91,.25);
+
+    box-shadow:
+
+    0 20px 50px rgba(60,45,30,.08);
 
 }
+
+
 
 
 
@@ -468,9 +603,9 @@
 
     font-size:clamp(2rem,4vw,3rem);
 
-    margin-bottom:1rem;
-
 }
+
+
 
 
 
@@ -484,42 +619,39 @@
 
 
 
+
+
 /* =========================================
    RESPONSIVE
 ========================================= */
 
+
 @media(max-width:1000px){
+
 
     .officer-grid,
     .officers-grid{
 
-        grid-template-columns:
-
-        repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
 
     }
 
 
     .transparency-grid{
 
-        grid-template-columns:
-
-        repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
 
     }
 
-
-    .announcement-grid{
-
-        grid-template-columns:1fr;
-
-    }
 
 }
 
 
 
+
+
 @media(max-width:600px){
+
 
     .officer-grid,
     .officers-grid,
@@ -530,6 +662,7 @@
     }
 
 
+
     .announcement-feature{
 
         padding:2rem;
@@ -537,10 +670,20 @@
     }
 
 
+
+    .announcement-feature h3{
+
+        font-size:1.5rem;
+
+    }
+
+
+
     .cta-box{
 
         padding:2.5rem 1.5rem;
 
     }
+
 
 }
