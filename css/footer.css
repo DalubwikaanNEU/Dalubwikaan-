@@ -1,34 +1,48 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
    FOOTER.CSS
-   PREMIUM BEIGE & GOLD DESIGN
+   VERSION 2.0
+   PREMIUM FOOTER SYSTEM
 ======================================================= */
 
 
 /* =========================================
-   FOOTER
+   FOOTER BASE
 ========================================= */
 
 
 footer{
 
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+    padding:
+
+    5rem 0 2rem;
+
+
     background:
 
+
     linear-gradient(
+
         135deg,
-        #2E241C,
-        #443528
+
+        #241c15,
+
+        #493827
+
     );
+
 
     color:
 
     rgba(255,255,255,.8);
 
-    padding:5rem 0 2rem;
-
-    position:relative;
-
-    overflow:hidden;
 
 }
 
@@ -36,30 +50,64 @@ footer{
 
 
 
-/* Decorative circles */
+
+
+
+
+/* =========================================
+   DECORATIVE ELEMENTS
+========================================= */
 
 
 footer::before{
 
+
     content:"";
+
 
     position:absolute;
 
-    width:420px;
 
-    height:420px;
+    width:
+
+    450px;
+
+
+    height:
+
+    450px;
+
 
     border-radius:50%;
 
+
     background:
 
-    rgba(198,161,91,.12);
 
-    top:-220px;
+    radial-gradient(
 
-    right:-120px;
+        circle,
+
+        rgba(232,209,154,.18),
+
+        transparent 70%
+
+    );
+
+
+    top:
+
+    -230px;
+
+
+    right:
+
+    -120px;
+
 
 }
+
+
 
 
 
@@ -67,23 +115,41 @@ footer::before{
 
 footer::after{
 
+
     content:"";
+
 
     position:absolute;
 
-    width:250px;
 
-    height:250px;
+    width:
+
+    260px;
+
+
+    height:
+
+    260px;
+
 
     border-radius:50%;
 
+
     background:
+
 
     rgba(231,216,201,.08);
 
-    bottom:-120px;
 
-    left:-80px;
+    bottom:
+
+    -130px;
+
+
+    left:
+
+    -90px;
+
 
 }
 
@@ -91,57 +157,148 @@ footer::after{
 
 
 
+
+
+
+
 /* =========================================
-   FOOTER GRID
+   FOOTER CONTAINER
 ========================================= */
 
 
 .footer-grid{
 
+
     display:grid;
+
 
     grid-template-columns:
 
-    2fr 1fr 1fr 1.2fr;
 
-    gap:3rem;
+    repeat(auto-fit,minmax(220px,1fr));
+
+
+    gap:
+
+    3rem;
+
 
     position:relative;
 
+
     z-index:2;
 
+
 }
+
+
+
+
 
 
 
 
 
 /* =========================================
-   BRAND
+   FOOTER COLUMN
 ========================================= */
 
 
-.footer-logo{
+.footer-grid > div{
 
-    display:none;
+
+    position:relative;
+
 
 }
 
 
 
+
+
+
+
+.footer-grid > div:first-child::before{
+
+
+    content:"";
+
+
+    display:block;
+
+
+    width:
+
+    75px;
+
+
+    height:
+
+    3px;
+
+
+    border-radius:
+
+    var(--radius-round);
+
+
+    background:
+
+
+    linear-gradient(
+
+        90deg,
+
+        var(--secondary),
+
+        var(--secondary-light)
+
+    );
+
+
+    margin-bottom:
+
+    1.5rem;
+
+
+}
+/* =========================================
+   FOOTER BRAND
+========================================= */
 
 
 footer h3{
 
-    color:white;
 
-    font-size:1.8rem;
+    color:
 
-    font-weight:800;
+    white;
 
-    letter-spacing:2px;
 
-    margin-bottom:1rem;
+    font-family:
+
+    var(--font-heading);
+
+
+    font-size:
+
+    1.8rem;
+
+
+    font-weight:
+
+    var(--fw-extrabold);
+
+
+    letter-spacing:
+
+    2px;
+
+
+    margin-bottom:
+
+    1rem;
+
 
 }
 
@@ -149,21 +306,21 @@ footer h3{
 
 
 
-footer h4{
+
+
+footer h3 span{
+
 
     color:
 
     var(--secondary-light);
 
-    font-size:1rem;
-
-    letter-spacing:1px;
-
-    text-transform:uppercase;
-
-    margin-bottom:1.4rem;
 
 }
+
+
+
+
 
 
 
@@ -171,13 +328,75 @@ footer h4{
 
 footer p{
 
+
     color:
 
-    rgba(255,255,255,.65);
+    rgba(255,255,255,.68);
 
-    line-height:1.9;
+
+    line-height:
+
+    1.9;
+
+
+    max-width:
+
+    380px;
+
 
 }
+
+
+
+
+
+
+
+
+
+/* =========================================
+   FOOTER HEADINGS
+========================================= */
+
+
+footer h4{
+
+
+    color:
+
+    var(--secondary-light);
+
+
+    font-size:
+
+    .95rem;
+
+
+    font-weight:
+
+    var(--fw-bold);
+
+
+    letter-spacing:
+
+    1.5px;
+
+
+    text-transform:
+
+    uppercase;
+
+
+    margin-bottom:
+
+    1.4rem;
+
+
+}
+
+
+
+
 
 
 
@@ -190,13 +409,21 @@ footer p{
 
 footer ul{
 
+
     display:flex;
+
 
     flex-direction:column;
 
-    gap:.9rem;
+
+    gap:
+
+    .8rem;
+
 
 }
+
+
 
 
 
@@ -204,13 +431,31 @@ footer ul{
 
 footer ul li a{
 
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
     color:
 
-    rgba(255,255,255,.7);
+    rgba(255,255,255,.72);
 
-    transition:.3s ease;
+
+    font-size:
+
+    .95rem;
+
+
+    transition:
+
+    var(--transition);
+
 
 }
+
+
 
 
 
@@ -218,32 +463,45 @@ footer ul li a{
 
 footer ul li a:hover{
 
+
     color:
 
     var(--secondary-light);
 
-    padding-left:8px;
+
+    transform:
+
+    translateX(8px);
+
 
 }
+
+
+
+
 
 
 
 
 
 /* =========================================
-   CONTACT
+   CONTACT INFORMATION
 ========================================= */
 
 
-footer i{
+.footer-contact{
 
-    color:
 
-    var(--secondary-light);
+    display:flex;
 
-    width:25px;
 
-    margin-right:.5rem;
+    flex-direction:column;
+
+
+    gap:
+
+    1rem;
+
 
 }
 
@@ -251,6 +509,145 @@ footer i{
 
 
 
+
+
+.contact-item{
+
+
+    display:flex;
+
+
+    align-items:flex-start;
+
+
+    gap:
+
+    .8rem;
+
+
+    padding:
+
+    1rem;
+
+
+    border-radius:
+
+
+    var(--radius-md);
+
+
+    background:
+
+
+    rgba(255,255,255,.06);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+
+
+
+
+.contact-item:hover{
+
+
+    background:
+
+
+    rgba(198,161,91,.15);
+
+
+    transform:
+
+    translateY(-3px);
+
+
+}
+
+
+
+
+
+
+
+.contact-item i{
+
+
+    color:
+
+    var(--secondary-light);
+
+
+    font-size:
+
+    1.1rem;
+
+
+    margin-top:
+
+    .2rem;
+
+
+}
+
+
+
+
+
+
+
+.contact-item span{
+
+
+    color:
+
+    rgba(255,255,255,.75);
+
+
+    font-size:
+
+    .9rem;
+
+
+    line-height:
+
+    1.6;
+
+
+}
+
+
+
+
+
+
+
+.contact-item a{
+
+
+    color:
+
+    var(--secondary-light);
+
+
+    font-weight:
+
+    var(--fw-semibold);
+
+
+}
 /* =========================================
    FOOTER DIVIDER
 ========================================= */
@@ -258,15 +655,29 @@ footer i{
 
 footer hr{
 
+
     border:none;
 
-    border-top:
 
-    1px solid rgba(255,255,255,.15);
+    height:1px;
 
-    margin:3rem 0 1.8rem;
+
+    background:
+
+
+    rgba(255,255,255,.15);
+
+
+    margin:
+
+    3rem 0 1.8rem;
+
 
 }
+
+
+
+
 
 
 
@@ -279,19 +690,30 @@ footer hr{
 
 .footer-bottom{
 
+
     display:flex;
 
-    justify-content:space-between;
 
     align-items:center;
 
-    gap:1rem;
+
+    justify-content:space-between;
+
+
+    gap:
+
+    1rem;
+
 
     position:relative;
 
+
     z-index:2;
 
+
 }
+
+
 
 
 
@@ -299,7 +721,19 @@ footer hr{
 
 .footer-bottom p{
 
-    font-size:.85rem;
+
+    margin:0;
+
+
+    color:
+
+    rgba(255,255,255,.6);
+
+
+    font-size:
+
+    .85rem;
+
 
 }
 
@@ -307,58 +741,91 @@ footer hr{
 
 
 
+
+
+
+
 /* =========================================
-   GOLD ACCENT
+   FOOTER BADGE
 ========================================= */
 
 
-.footer-grid > div:first-child::before{
+.footer-badge{
 
-    content:"";
 
-    display:block;
+    display:inline-flex;
 
-    width:70px;
 
-    height:3px;
+    align-items:center;
+
+
+    gap:
+
+    .5rem;
+
+
+    padding:
+
+    .45rem 1rem;
+
+
+    border-radius:
+
+
+    var(--radius-round);
+
 
     background:
 
-    linear-gradient(
 
-        90deg,
+    rgba(198,161,91,.15);
 
-        var(--secondary),
 
-        var(--secondary-light)
+    color:
 
-    );
+    var(--secondary-light);
 
-    margin-bottom:1.5rem;
 
-    border-radius:20px;
+    font-size:
+
+    .8rem;
+
+
+    font-weight:
+
+    var(--fw-semibold);
+
 
 }
+
+
+
+
 
 
 
 
 
 /* =========================================
-   RESPONSIVE
+   DARK MODE SUPPORT
 ========================================= */
 
 
-@media(max-width:1000px){
+[data-theme="dark"] footer{
 
 
-    .footer-grid{
+    background:
 
-        grid-template-columns:
 
-        repeat(2,1fr);
+    linear-gradient(
 
-    }
+        135deg,
+
+        #0f0f0f,
+
+        #1f1812
+
+    );
 
 
 }
@@ -367,12 +834,58 @@ footer hr{
 
 
 
-@media(max-width:600px){
+
+
+[data-theme="dark"] .contact-item{
+
+
+    background:
+
+
+    rgba(255,255,255,.05);
+
+
+}
+
+
+
+
+
+
+
+[data-theme="dark"] footer p{
+
+
+    color:
+
+    rgba(255,255,255,.65);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   RESPONSIVE FOOTER
+========================================= */
+
+
+@media(max-width:768px){
 
 
     footer{
 
-        padding-top:3.5rem;
+
+        padding:
+
+        4rem 0 1.5rem;
+
 
     }
 
@@ -380,9 +893,11 @@ footer hr{
 
     .footer-grid{
 
-        grid-template-columns:1fr;
 
-        gap:2.5rem;
+        gap:
+
+        2rem;
+
 
     }
 
@@ -390,9 +905,59 @@ footer hr{
 
     .footer-bottom{
 
+
         flex-direction:column;
 
+
         text-align:center;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:480px){
+
+
+    footer h3{
+
+
+        font-size:
+
+        1.5rem;
+
+
+    }
+
+
+
+    footer p{
+
+
+        font-size:
+
+        .9rem;
+
+
+    }
+
+
+
+    .contact-item{
+
+
+        padding:
+
+        .85rem;
+
 
     }
 
