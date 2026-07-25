@@ -1,13 +1,28 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
    SECTIONS.CSS
-   FINAL BEIGE & GOLD THEME
+   PREMIUM BEIGE & GOLD DESIGN
 ======================================================= */
 
 
 /* =========================================
-   GENERAL SECTION BACKGROUNDS
+   GENERAL SECTION STYLE
 ========================================= */
+
+
+section{
+
+    position:relative;
+
+    padding:6rem 0;
+
+    overflow:hidden;
+
+}
+
+
+
+
 
 #officers,
 #announcements,
@@ -19,11 +34,15 @@
 
 
 
+
+
 .transparency-preview{
 
     background:var(--white);
 
 }
+
+
 
 
 
@@ -35,9 +54,130 @@
 
 
 
+
+
+/* =========================================
+   SECTION HEADER ENHANCEMENT
+========================================= */
+
+
+.section-header,
+.section-title{
+
+    position:relative;
+
+    text-align:center;
+
+    margin-bottom:3.5rem;
+
+}
+
+
+
+
+
+.section-header span,
+.section-title span{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    color:
+
+    var(--secondary-dark);
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+
+
+.section-header h2,
+.section-title h2{
+
+    font-size:
+
+    clamp(2rem,4vw,3rem);
+
+    color:var(--text);
+
+    font-weight:800;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+
+
+.section-header p,
+.section-title p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+.section-header::after,
+.section-title::after{
+
+    content:"";
+
+    display:block;
+
+    width:70px;
+
+    height:3px;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        var(--secondary),
+
+        var(--secondary-light)
+
+    );
+
+    margin:1.5rem auto 0;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
 /* =========================================
    OFFICERS SECTION
 ========================================= */
+
 
 #officers{
 
@@ -47,27 +187,32 @@
 
 
 
+
+
 #officers::before{
+
 
     content:"";
 
     position:absolute;
 
-    width:250px;
+    width:300px;
 
-    height:250px;
+    height:300px;
 
-    background:var(--primary-light);
+    background:
+
+    rgba(198,161,91,.12);
 
     border-radius:50%;
 
-    top:80px;
+    top:100px;
 
-    left:-120px;
-
-    z-index:0;
+    left:-150px;
 
 }
+
+
 
 
 
@@ -81,9 +226,12 @@
 
 
 
+
+
 /* =========================================
-   ANNOUNCEMENTS SECTION
+   ANNOUNCEMENTS
 ========================================= */
+
 
 #announcements{
 
@@ -93,13 +241,42 @@
 
         180deg,
 
-        var(--white),
+        #ffffff,
 
-        var(--background)
+        #f8efe5
 
     );
 
 }
+
+
+
+
+
+#announcements::before{
+
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(198,161,91,.08);
+
+    right:-100px;
+
+    top:100px;
+
+}
+
+
 
 
 
@@ -111,17 +288,20 @@
 
 
 
+
+
 /* =========================================
-   TRANSPARENCY SECTION
+   TRANSPARENCY
 ========================================= */
+
 
 .transparency-preview{
 
     position:relative;
 
-    overflow:hidden;
-
 }
+
+
 
 
 
@@ -131,15 +311,17 @@
 
     position:absolute;
 
-    width:400px;
+    width:450px;
 
-    height:400px;
+    height:450px;
 
     border-radius:50%;
 
-    background:var(--primary-light);
+    background:
 
-    right:-150px;
+    rgba(231,216,201,.35);
+
+    right:-180px;
 
     top:-150px;
 
@@ -147,27 +329,24 @@
 
 
 
+
+
 .transparency-preview .container{
 
     position:relative;
 
-    z-index:1;
+    z-index:2;
 
 }
 
 
-
-.section-title span{
-
-    color:var(--secondary-dark);
-
-}
 
 
 
 /* =========================================
-   OFFICERS PREVIEW
+   OFFICER PREVIEW
 ========================================= */
+
 
 .officers-preview{
 
@@ -177,9 +356,9 @@
 
         180deg,
 
-        var(--background),
+        #f8efe5,
 
-        var(--white)
+        #ffffff
 
     );
 
@@ -187,17 +366,20 @@
 
 
 
+
+
 /* =========================================
    CTA SECTION
 ========================================= */
 
+
 .cta{
 
-    padding-top:5rem;
-
-    padding-bottom:5rem;
+    padding:6rem 0;
 
 }
+
+
 
 
 
@@ -207,7 +389,11 @@
 
     overflow:hidden;
 
+    border-radius:30px;
+
 }
+
+
 
 
 
@@ -217,19 +403,49 @@
 
     position:absolute;
 
-    width:300px;
+    width:350px;
 
-    height:300px;
+    height:350px;
 
     border-radius:50%;
 
-    background:rgba(198,161,91,.18);
+    background:
 
-    top:-150px;
+    rgba(198,161,91,.15);
+
+    top:-180px;
 
     right:-120px;
 
 }
+
+
+
+
+
+.cta-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:200px;
+
+    height:200px;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(255,255,255,.25);
+
+    bottom:-100px;
+
+    left:-80px;
+
+}
+
+
 
 
 
@@ -243,24 +459,31 @@
 
 
 
+
+
 /* =========================================
    EMPTY STATES
-   (FOR FIREBASE CONTENT)
 ========================================= */
 
+
 .empty-state{
+
 
     text-align:center;
 
     padding:3rem;
 
-    border-radius:var(--radius-lg);
+    border-radius:25px;
 
-    background:var(--primary-light);
+    background:
+
+    var(--primary-light);
 
     color:var(--text-light);
 
 }
+
+
 
 
 
@@ -276,23 +499,31 @@
 
 
 
+
+
 /* =========================================
    TABLE SECTIONS
 ========================================= */
 
+
 .table-container{
+
 
     overflow-x:auto;
 
-    background:var(--white);
+    background:white;
 
-    border-radius:var(--radius-lg);
+    border-radius:20px;
 
-    border:1px solid var(--border);
+    border:
+
+    1px solid var(--border);
 
     box-shadow:var(--shadow);
 
 }
+
+
 
 
 
@@ -306,19 +537,23 @@ table{
 
 
 
+
+
 table th{
 
-    background:var(--primary-light);
+    background:
+
+    var(--primary-light);
 
     color:var(--text);
 
-    padding:1rem;
+    padding:1.1rem;
 
     text-align:left;
 
-    font-weight:var(--fw-semibold);
-
 }
+
+
 
 
 
@@ -326,7 +561,9 @@ table td{
 
     padding:1rem;
 
-    border-bottom:1px solid var(--border);
+    border-bottom:
+
+    1px solid var(--border);
 
     color:var(--text-light);
 
@@ -334,41 +571,43 @@ table td{
 
 
 
-table tr:last-child td{
-
-    border-bottom:none;
-
-}
-
 
 
 table tr:hover{
 
-    background:var(--background);
+    background:
+
+    #faf5ed;
 
 }
 
 
 
+
+
 /* =========================================
-   BADGES / STATUS
+   STATUS BADGES
 ========================================= */
 
+
 .status{
+
 
     display:inline-flex;
 
     align-items:center;
 
-    padding:.35rem .9rem;
+    padding:.4rem 1rem;
 
-    border-radius:var(--radius-round);
+    border-radius:50px;
 
     font-size:.8rem;
 
-    font-weight:var(--fw-semibold);
+    font-weight:700;
 
 }
+
+
 
 
 
@@ -382,6 +621,8 @@ table tr:hover{
 
 
 
+
+
 .status-ongoing{
 
     background:#E8D19A;
@@ -389,6 +630,8 @@ table tr:hover{
     color:#6F5420;
 
 }
+
+
 
 
 
@@ -402,18 +645,28 @@ table tr:hover{
 
 
 
+
+
 /* =========================================
    RESPONSIVE
 ========================================= */
 
+
 @media(max-width:768px){
+
+
+    section{
+
+        padding:4rem 0;
+
+    }
+
 
     .cta{
 
-        padding-top:3rem;
-
-        padding-bottom:3rem;
+        padding:4rem 0;
 
     }
+
 
 }
