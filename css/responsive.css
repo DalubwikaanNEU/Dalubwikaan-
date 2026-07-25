@@ -1,47 +1,126 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
    RESPONSIVE.CSS
-   FINAL BEIGE & GOLD THEME
-   MOBILE / TABLET / DESKTOP OPTIMIZATION
+   VERSION 2.0
+   MOBILE FIRST OPTIMIZATION
 ======================================================= */
 
 
-/* =======================================================
-   LARGE TABLETS / SMALL LAPTOPS
-======================================================= */
+
+/* =========================================
+   GLOBAL RESPONSIVE SETTINGS
+========================================= */
+
+
+html{
+
+    overflow-x:hidden;
+
+}
+
+
+
+body{
+
+    width:100%;
+
+    overflow-x:hidden;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+
+
+
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+
+
+
+
+
+
+button,
+a{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   LARGE DESKTOP / LAPTOP
+========================================= */
+
 
 @media(max-width:1200px){
 
 
     :root{
 
-        --section-padding:5rem;
+        --section-padding:5.5rem;
 
     }
 
 
-    .hero-content h1{
 
-        font-size:4rem;
+    .container{
+
+        max-width:100%;
+
+        padding-left:2rem;
+
+        padding-right:2rem;
 
     }
+
+
+
+    .hero-content{
+
+        max-width:750px;
+
+    }
+
 
 
     .officer-grid,
     .officers-grid{
 
+
         grid-template-columns:
 
         repeat(3,1fr);
 
+
     }
+
 
 
     .transparency-grid{
 
+
         grid-template-columns:
 
         repeat(2,1fr);
+
 
     }
 
@@ -50,11 +129,26 @@
 
 
 
-/* =======================================================
-   TABLETS
-======================================================= */
+
+
+
+
+
+
+/* =========================================
+   TABLET MODE
+========================================= */
+
 
 @media(max-width:992px){
+
+
+    :root{
+
+        --section-padding:5rem;
+
+    }
+
 
 
     .container{
@@ -66,7 +160,15 @@
     }
 
 
-    /* Header */
+
+
+
+
+
+    /* =========================
+       MOBILE HEADER CONTROL
+    ========================= */
+
 
     #navbar{
 
@@ -75,22 +177,47 @@
     }
 
 
+
     #menuButton{
 
         display:flex;
 
+        position:relative;
+
+        z-index:1200;
+
+        width:46px;
+
+        height:46px;
+
+        cursor:pointer;
+
+        touch-action:manipulation;
+
     }
 
 
-    .admin-button{
 
-        display:none;
+
+
+
+
+    .header-right{
+
+        gap:.6rem;
 
     }
 
 
 
-    /* Hero */
+
+
+
+
+    /* =========================
+       HERO
+    ========================= */
+
 
     #hero{
 
@@ -99,11 +226,15 @@
     }
 
 
+
     .hero-content{
 
         margin:auto;
 
+        padding-top:3rem;
+
     }
+
 
 
     .hero-content p{
@@ -116,8 +247,6 @@
 
 
 
-    /* Buttons */
-
     .hero-buttons{
 
         justify-content:center;
@@ -126,14 +255,23 @@
 
 
 
-    /* Grids */
+
+
+
+
+    /* =========================
+       GRID SYSTEM
+    ========================= */
+
 
     .officer-grid,
     .officers-grid{
 
+
         grid-template-columns:
 
         repeat(2,1fr);
+
 
     }
 
@@ -141,30 +279,27 @@
 
     .announcement-grid{
 
+
         grid-template-columns:1fr;
 
-    }
-
-
-
-    .footer-grid{
-
-        grid-template-columns:
-
-        repeat(2,1fr);
 
     }
+
 
 
 }
 
+/* =========================================
+   MOBILE CONTENT OPTIMIZATION
+========================================= */
 
 
-/* =======================================================
-   MOBILE DEVICES
-======================================================= */
+/* =========================================
+   HERO RESPONSIVE
+========================================= */
 
-@media(max-width:600px){
+
+@media(max-width:768px){
 
 
     :root{
@@ -175,228 +310,1027 @@
 
 
 
-    body{
-
-        font-size:.95rem;
-
-    }
-
-
 
     .container{
 
-        padding-left:1rem;
 
-        padding-right:1rem;
+        padding-left:
+
+        1.2rem;
+
+
+        padding-right:
+
+        1.2rem;
+
 
     }
 
 
 
-    /* Header */
 
 
-    .brand h1{
-
-        font-size:1.2rem;
-
-    }
-
-
-    .brand span{
-
-        font-size:.65rem;
-
-    }
-
-
-
-    /* Hero */
 
 
     #hero{
 
-        min-height:100vh;
+
+        min-height:
+
+        100svh;
+
+
+        padding-top:
+
+        5rem;
+
 
     }
+
+
+
+
 
 
 
     .hero-content h1{
 
-        font-size:2.8rem;
 
-        letter-spacing:-1px;
+        font-size:
+
+        clamp(2.3rem,10vw,3rem);
+
+
+        line-height:
+
+        1.15;
+
+
+        letter-spacing:
+
+        -1px;
+
 
     }
+
+
+
+
 
 
 
     .hero-content p{
 
-        font-size:1rem;
+
+        font-size:
+
+        .98rem;
+
+
+        line-height:
+
+        1.8;
+
 
     }
+
+
+
+
+
+
+
+    .tagline{
+
+
+        font-size:
+
+        .75rem;
+
+
+        padding:
+
+        .55rem 1rem;
+
+
+    }
+
+
+
+
 
 
 
     .hero-buttons{
 
-        flex-direction:column;
 
-        width:100%;
+        flex-direction:
+
+        column;
+
+
+        width:
+
+        100%;
+
+
+        gap:
+
+        .8rem;
+
 
     }
+
+
+
+
 
 
 
     .hero-buttons .btn{
 
-        width:100%;
+
+        width:
+
+        100%;
+
+
+        min-height:
+
+        48px;
+
 
     }
 
 
 
-    /* Section Titles */
-
-
-    .section-header h2,
-    .section-title h2{
-
-        font-size:2rem;
-
-    }
-
-
-
-    /* Cards */
-
-
-    .officer-grid,
-    .officers-grid,
-    .transparency-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-
-    .officer-card{
-
-        padding:1.5rem;
-
-    }
-
-
-
-    .announcement-feature{
-
-        padding:1.5rem;
-
-    }
-
-
-
-    .announcement-feature h3{
-
-        font-size:1.5rem;
-
-    }
-
-
-
-    .transparency-card{
-
-        padding:1.5rem;
-
-    }
-
-
-
-    /* CTA */
-
-
-    .cta-box{
-
-        padding:2rem 1.2rem;
-
-    }
-
-
-
-    .cta-box h2{
-
-        font-size:1.8rem;
-
-    }
-
-
-
-    /* Footer */
-
-
-    .footer-grid{
-
-        grid-template-columns:1fr;
-
-        text-align:center;
-
-    }
-
-
-    footer ul{
-
-        align-items:center;
-
-    }
-
-
-    footer i{
-
-        margin-right:.3rem;
-
-    }
-
-
-    .footer-bottom{
-
-        flex-direction:column;
-
-    }
 
 
 }
 
 
 
-/* =======================================================
-   VERY SMALL PHONES
-======================================================= */
-
-@media(max-width:380px){
 
 
-    .hero-content h1{
 
-        font-size:2.3rem;
+
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+
+@media(max-width:768px){
+
+
+
+    .section-header,
+    .section-title{
+
+
+        margin-bottom:
+
+        2.5rem;
+
 
     }
 
 
-    .tagline{
 
-        font-size:.75rem;
+
+
+
+
+    .section-header h2,
+    .section-title h2{
+
+
+        font-size:
+
+        clamp(1.8rem,8vw,2.2rem);
+
 
     }
+
+
+
+
+
+
+
+    .section-header p,
+    .section-title p{
+
+
+        font-size:
+
+        .95rem;
+
+
+        line-height:
+
+        1.8;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   CARD RESPONSIVE SYSTEM
+========================================= */
+
+
+@media(max-width:768px){
+
+
+    .card{
+
+
+        padding:
+
+        1.5rem;
+
+
+        border-radius:
+
+        var(--radius-md);
+
+
+    }
+
+
+
+
+
+
+
+    .officer-grid,
+    .officers-grid,
+    .transparency-grid{
+
+
+        grid-template-columns:
+
+        1fr;
+
+
+        gap:
+
+        1.5rem;
+
+
+    }
+
+
+
+
+
+
+
+    .officer-card{
+
+
+        padding:
+
+        1.8rem 1.3rem;
+
+
+    }
+
+
+
+
+
+
+
+    .officer-card img,
+    .officer-image{
+
+
+        width:
+
+        100px;
+
+
+        height:
+
+        100px;
+
+
+    }
+
+
+
+
+
+
+
+    .officer-card h3{
+
+
+        font-size:
+
+        1.15rem;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   ANNOUNCEMENT SECTION
+========================================= */
+
+
+@media(max-width:768px){
+
+
+
+    .announcement-grid{
+
+
+        gap:
+
+        1.5rem;
+
+
+    }
+
+
+
+
+
+
+
+    .announcement-feature{
+
+
+        padding:
+
+        1.5rem;
+
+
+        border-radius:
+
+        20px;
+
+
+    }
+
+
+
+
+
+
+
+    .announcement-feature h3{
+
+
+        font-size:
+
+        1.35rem;
+
+
+    }
+
+
+
+
+
+
+
+    .announcement-item{
+
+
+        padding:
+
+        1.2rem;
+
+
+        flex-direction:
+
+        column;
+
+
+        align-items:
+
+        flex-start;
+
+
+        gap:
+
+        .8rem;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   CTA MOBILE
+========================================= */
+
+
+@media(max-width:768px){
+
+
+
+    .cta-box{
+
+
+        padding:
+
+        2rem 1.3rem;
+
+
+        border-radius:
+
+        22px;
+
+
+    }
+
+
+
+
+
+
+
+    .cta-box h2{
+
+
+        font-size:
+
+        1.7rem;
+
+
+        line-height:
+
+        1.3;
+
+
+    }
+
+
+
+}
+
+/* =========================================
+   FOOTER MOBILE OPTIMIZATION
+========================================= */
+
+
+@media(max-width:768px){
+
+
+    footer{
+
+
+        padding:
+
+        4rem 0 1.5rem;
+
+
+    }
+
+
+
+
+
+
+
+    .footer-grid{
+
+
+        grid-template-columns:
+
+        1fr;
+
+
+        gap:
+
+        2rem;
+
+
+        text-align:center;
+
+
+    }
+
+
+
+
+
+
+
+    footer p{
+
+
+        margin-left:auto;
+
+
+        margin-right:auto;
+
+
+    }
+
+
+
+
+
+
+
+    footer ul{
+
+
+        align-items:center;
+
+
+    }
+
+
+
+
+
+
+
+    .footer-contact{
+
+
+        align-items:stretch;
+
+
+    }
+
+
+
+
+
+
+
+    .contact-item{
+
+
+        text-align:left;
+
+
+    }
+
+
+
+
+
+
+
+    .footer-bottom{
+
+
+        flex-direction:
+
+        column;
+
+
+        text-align:center;
+
+
+        gap:
+
+        .8rem;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   TABLE RESPONSIVE SYSTEM
+========================================= */
+
+
+.table-container{
+
+
+    width:100%;
+
+
+    overflow-x:auto;
+
+
+    -webkit-overflow-scrolling:touch;
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:768px){
+
+
+    table{
+
+
+        min-width:
+
+        650px;
+
+
+    }
+
+
+
+
+
+
+
+    table th,
+    table td{
+
+
+        padding:
+
+        .8rem;
+
+
+        font-size:
+
+        .85rem;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   DARK MODE RESPONSIVE SUPPORT
+========================================= */
+
+
+[data-theme="dark"]{
+
+
+    --background:#111111;
+
+
+    --surface:#1b1b1b;
+
+
+    --white:#ffffff;
+
+
+    --text:#f5f5f5;
+
+
+    --text-light:#cccccc;
+
+
+    --text-muted:#999999;
+
+
+}
+
+
+
+
+
+
+
+[data-theme="dark"] body{
+
+
+    background:
+
+    var(--background);
+
+
+    color:
+
+    var(--text);
+
+
+}
+
+
+
+
+
+
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .officer-card,
+[data-theme="dark"] .transparency-card,
+[data-theme="dark"] .announcement-item{
+
+
+    background:
+
+    #1d1d1d;
+
+
+    border-color:
+
+    rgba(255,255,255,.1);
+
+
+}
+
+
+
+
+
+
+
+[data-theme="dark"] .section-header h2,
+[data-theme="dark"] .section-title h2{
+
+
+    color:
+
+    var(--text);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+
+@media(max-width:480px){
+
+
+
+    .container{
+
+
+        padding-left:
+
+        1rem;
+
+
+        padding-right:
+
+        1rem;
+
+
+    }
+
+
+
+
+
+
+
+    .brand h1{
+
+
+        font-size:
+
+        1.05rem;
+
+
+    }
+
+
+
+
+
+
+
+    .brand span{
+
+
+        font-size:
+
+        .6rem;
+
+
+    }
+
+
+
+
+
+
+
+    #menuButton{
+
+
+        width:
+
+        42px;
+
+
+        height:
+
+        42px;
+
+
+    }
+
+
+
+
+
 
 
     .btn{
 
-        padding:.8rem 1.4rem;
+
+        padding:
+
+        .75rem 1.2rem;
+
+
+        font-size:
+
+        .85rem;
+
 
     }
+
+
+
+
+
+
+
+    .section-header h2,
+    .section-title h2{
+
+
+        font-size:
+
+        1.7rem;
+
+
+    }
+
+
+
+
+
+
+
+    .officer-card,
+    .transparency-card{
+
+
+        padding:
+
+        1.3rem;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   EXTRA SMALL PHONES
+========================================= */
+
+
+@media(max-width:380px){
+
+
+
+    .hero-content h1{
+
+
+        font-size:
+
+        2.1rem;
+
+
+    }
+
+
+
+
+
+
+
+    .hero-content p{
+
+
+        font-size:
+
+        .9rem;
+
+
+    }
+
+
+
+
+
+
+
+    .tagline{
+
+
+        width:
+
+        100%;
+
+
+        justify-content:center;
+
+
+        text-align:center;
+
+
+    }
+
+
+
+
+
+
+
+    .cta-box h2{
+
+
+        font-size:
+
+        1.5rem;
+
+
+    }
+
 
 
 }
