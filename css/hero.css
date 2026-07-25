@@ -1,7 +1,7 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
    HERO.CSS
-   FINAL BEIGE & GOLD THEME
+   ENHANCED BEIGE & GOLD THEME
 ======================================================= */
 
 
@@ -23,24 +23,21 @@
 
     background:
 
-    radial-gradient(
-        circle at top right,
-        rgba(198,161,91,.35),
-        transparent 35%
-    ),
-
     linear-gradient(
         135deg,
-        #3A3027,
-        #6F6258
+        #2E241C 0%,
+        #51402F 45%,
+        #8A6842 100%
     );
 
 }
 
 
+
 /* =========================================
-   DECORATIVE BACKGROUND
+   DECORATIVE BACKGROUND SHAPES
 ========================================= */
+
 
 #hero::before{
 
@@ -48,53 +45,60 @@
 
     position:absolute;
 
-    width:500px;
+    width:520px;
 
-    height:500px;
+    height:520px;
 
     border-radius:50%;
 
     background:
 
-    rgba(231,216,201,.15);
+    rgba(231,216,201,.12);
 
-    top:-150px;
+    top:-180px;
 
     right:-150px;
 
-    animation:floatShape 8s ease-in-out infinite;
+    animation:floatShape 10s ease-in-out infinite;
 
 }
+
 
 
 #hero::after{
 
-    content:"";
+    content:"DALUBWIKAAN";
 
     position:absolute;
 
-    width:350px;
+    right:-80px;
 
-    height:350px;
+    bottom:40px;
 
-    border-radius:50%;
+    font-family:var(--font-heading);
 
-    background:
+    font-size:clamp(5rem,15vw,13rem);
 
-    rgba(198,161,91,.18);
+    font-weight:800;
 
-    bottom:-120px;
+    letter-spacing:12px;
 
-    left:-100px;
+    color:rgba(255,255,255,.05);
 
-    animation:floatShape 10s ease-in-out infinite reverse;
+    white-space:nowrap;
+
+    pointer-events:none;
 
 }
+
+
+
 
 
 /* =========================================
    HERO OVERLAY
 ========================================= */
+
 
 .hero-overlay{
 
@@ -106,16 +110,20 @@
 
     linear-gradient(
         90deg,
-        rgba(46,36,29,.85),
-        rgba(46,36,29,.45)
+        rgba(30,23,18,.92),
+        rgba(46,36,29,.55)
     );
 
 }
 
 
+
+
+
 /* =========================================
    HERO CONTENT
 ========================================= */
+
 
 .hero-content{
 
@@ -130,9 +138,33 @@
 }
 
 
+
+.hero-content::before{
+
+    content:"";
+
+    display:block;
+
+    width:85px;
+
+    height:4px;
+
+    background:var(--secondary);
+
+    border-radius:50px;
+
+    margin-bottom:2rem;
+
+}
+
+
+
+
+
 /* =========================================
    TAGLINE
 ========================================= */
+
 
 .tagline{
 
@@ -140,15 +172,17 @@
 
     align-items:center;
 
-    padding:.6rem 1.2rem;
+    padding:.65rem 1.4rem;
 
     border-radius:var(--radius-round);
 
     background:
 
-    rgba(255,255,255,.12);
+    rgba(255,255,255,.10);
 
-    border:1px solid rgba(255,255,255,.25);
+    border:
+
+    1px solid rgba(255,255,255,.25);
 
     color:var(--secondary-light);
 
@@ -156,22 +190,28 @@
 
     font-weight:var(--fw-semibold);
 
+    letter-spacing:.5px;
+
     margin-bottom:1.8rem;
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 
 }
+
+
+
 
 
 /* =========================================
    HERO TITLE
 ========================================= */
 
+
 .hero-content h1{
 
     font-size:
 
-    clamp(3rem,7vw,5.8rem);
+    clamp(3.2rem,7vw,6rem);
 
     line-height:1.05;
 
@@ -179,11 +219,12 @@
 
     font-weight:var(--fw-extrabold);
 
-    letter-spacing:-2px;
+    letter-spacing:-3px;
 
     margin-bottom:1.5rem;
 
 }
+
 
 
 .hero-content h1::first-letter{
@@ -193,30 +234,38 @@
 }
 
 
+
+
+
 /* =========================================
    HERO DESCRIPTION
 ========================================= */
 
+
 .hero-content p{
 
-    max-width:680px;
+    max-width:700px;
 
     color:
 
-    rgba(255,255,255,.82);
+    rgba(255,255,255,.85);
 
     font-size:1.15rem;
 
-    line-height:1.8;
+    line-height:1.9;
 
-    margin-bottom:2.5rem;
+    margin-bottom:2.8rem;
 
 }
+
+
+
 
 
 /* =========================================
    HERO BUTTONS
 ========================================= */
+
 
 .hero-buttons{
 
@@ -229,9 +278,13 @@
 }
 
 
+
+
+
 /* =========================================
    SCROLL INDICATOR
 ========================================= */
+
 
 .scroll-indicator{
 
@@ -251,31 +304,37 @@
 
     gap:.7rem;
 
-    color:rgba(255,255,255,.7);
+    color:rgba(255,255,255,.75);
 
     font-size:.8rem;
 
-    z-index:2;
+    letter-spacing:1px;
+
+    z-index:3;
 
 }
+
 
 
 .scroll-indicator i{
 
     color:var(--secondary-light);
 
-    animation:
-
-    bounce 2s infinite;
+    animation:bounce 2s infinite;
 
 }
+
+
+
 
 
 /* =========================================
    ANIMATIONS
 ========================================= */
 
+
 @keyframes floatShape{
+
 
     0%,
     100%{
@@ -287,15 +346,17 @@
 
     50%{
 
-        transform:translateY(-30px);
+        transform:translateY(-35px);
 
     }
 
 }
+
 
 
 @keyframes bounce{
 
+
     0%,
     100%{
 
@@ -306,24 +367,52 @@
 
     50%{
 
-        transform:translateY(8px);
+        transform:translateY(10px);
 
     }
 
 }
+
+
+
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+
+@media(max-width:992px){
+
+
+    .hero-content{
+
+        max-width:750px;
+
+    }
+
+
+}
+
+
+
+
 
 
 /* =========================================
    MOBILE
 ========================================= */
 
+
 @media(max-width:768px){
+
 
     #hero{
 
-        min-height:90vh;
+        min-height:100vh;
 
     }
+
 
 
     .hero-content{
@@ -335,7 +424,8 @@
     }
 
 
-    .hero-content p{
+
+    .hero-content::before{
 
         margin-left:auto;
 
@@ -344,11 +434,55 @@
     }
 
 
+
+    .hero-content h1{
+
+        letter-spacing:-1px;
+
+    }
+
+
+
+    .hero-content p{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+        font-size:1rem;
+
+    }
+
+
+
     .hero-buttons{
 
         justify-content:center;
 
+        flex-direction:column;
+
     }
+
+
+
+    .hero-buttons .btn{
+
+        width:100%;
+
+    }
+
+
+
+    #hero::after{
+
+        font-size:4rem;
+
+        right:-30px;
+
+        bottom:100px;
+
+    }
+
 
 
     .scroll-indicator{
@@ -356,5 +490,6 @@
         display:none;
 
     }
+
 
 }
