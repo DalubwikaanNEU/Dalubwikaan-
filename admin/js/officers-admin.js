@@ -1,15 +1,14 @@
 // =======================================================
 // DALUBWIKAAN ADMIN
-// OFFICERS CRUD SYSTEM
+// OFFICERS MANAGEMENT SYSTEM
 // FIREBASE FIRESTORE + STORAGE
+// ADD / DELETE READY
 // =======================================================
-
 
 
 import {
 
 db,
-
 storage
 
 }
@@ -23,14 +22,12 @@ from
 import {
 
 collection,
-
 addDoc,
-
 getDocs,
-
 deleteDoc,
-
-doc
+doc,
+query,
+orderBy
 
 }
 
@@ -43,9 +40,7 @@ from
 import {
 
 ref,
-
 uploadBytes,
-
 getDownloadURL
 
 }
@@ -57,7 +52,10 @@ from
 
 
 
+
+// =========================================
 // ELEMENTS
+// =========================================
 
 
 const saveButton =
@@ -71,22 +69,28 @@ document.querySelector("#officerList");
 
 
 
-// SAVE OFFICER
+
+// =========================================
+// ADD OFFICER
+// =========================================
 
 
 saveButton.onclick = async()=>{
 
 
 const name =
-document.querySelector("#name").value;
+document.querySelector("#name").value.trim();
+
 
 
 const position =
-document.querySelector("#position").value;
+document.querySelector("#position").value.trim();
+
 
 
 const description =
-document.querySelector("#description").value;
+document.querySelector("#description").value.trim();
+
 
 
 const order =
@@ -101,35 +105,71 @@ document.querySelector("#photo").files[0];
 
 
 
+
+
+if(
+!name ||
+!position
+){
+
+
+alert(
+"Pakilagay ang pangalan at posisyon."
+);
+
+
+return;
+
+
+}
+
+
+
+
+
 let photoURL = "";
 
 
 
 
 
+// =========================================
+// UPLOAD IMAGE
+// =========================================
+
+
 if(file){
 
 
-const storageRef =
+const imageRef =
+
 ref(
+
 storage,
-"officers/" + file.name
+
+`officers/${Date.now()}-${file.name}`
+
 );
 
 
 
 await uploadBytes(
-storageRef,
+
+imageRef,
+
 file
+
 );
 
 
 
 photoURL =
-await getDownloadURL(
-storageRef
-);
 
+await getDownloadURL(
+
+imageRef
+
+);
 
 
 }
@@ -139,6 +179,13 @@ storageRef
 
 
 
+
+
+// =========================================
+// SAVE FIRESTORE
+// =========================================
+
+
 await addDoc(
 
 collection(db,"officers"),
@@ -146,13 +193,13 @@ collection(db,"officers"),
 {
 
 
-name,
+name:name,
 
-position,
+position:position,
 
-description,
+description:description,
 
-order,
+order:order || 999,
 
 photo:photoURL
 
@@ -164,9 +211,27 @@ photo:photoURL
 
 
 
+
 alert(
-"Officer added successfully!"
+
+"Matagumpay na naidagdag ang opisyal."
+
 );
+
+
+
+
+
+// CLEAR FORM
+
+
+document.querySelector("#name").value="";
+document.querySelector("#position").value="";
+document.querySelector("#description").value="";
+document.querySelector("#order").value="";
+document.querySelector("#photo").value="";
+
+
 
 
 
@@ -182,51 +247,152 @@ loadOfficers();
 
 
 
+
+
+// =========================================
 // LOAD OFFICERS
+// =========================================
 
 
 async function loadOfficers(){
+
+
+list.innerHTML =
+
+"Loading officers...";
+
+
+
+
+
+const q =
+
+query(
+
+collection(db,"officers"),
+
+orderBy("order")
+
+);
+
+
+
+const snapshot =
+
+await getDocs(q);
+
+
+
 
 
 list.innerHTML="";
 
 
 
-const snapshot =
-await getDocs(
-collection(db,"officers")
-);
+
+
+if(snapshot.empty){
+
+
+list.innerHTML=
+
+`
+
+<p>
+Wala pang officers.
+</p>
+
+`;
+
+
+return;
+
+
+}
 
 
 
-snapshot.forEach(item=>{
-
-
-const data =
-item.data();
 
 
 
-list.innerHTML += `
+snapshot.forEach((item)=>{
 
+
+const data = item.data();
+
+
+
+
+
+list.innerHTML +=
+
+
+
+`
 
 <div class="admin-card">
 
 
+
+${
+
+data.photo
+
+?
+
+`
+
+<img 
+src="${data.photo}"
+class="officer-preview">
+
+`
+
+:
+
+""
+
+}
+
+
+
+
+
 <h3>
+
 ${data.name}
+
 </h3>
 
 
+
+
 <p>
+
 ${data.position}
+
 </p>
 
 
 
-<button onclick="deleteOfficer('${item.id}')">
+
+<p>
+
+${data.description || ""}
+
+</p>
+
+
+
+
+<button
+onclick="deleteOfficer('${item.id}')">
+
+
+<i class="fa-solid fa-trash"></i>
 
 Delete
+
 
 </button>
 
@@ -242,6 +408,7 @@ Delete
 });
 
 
+
 }
 
 
@@ -249,21 +416,54 @@ Delete
 
 
 
-// DELETE
+
+
+// =========================================
+// DELETE OFFICER
+// =========================================
 
 
 window.deleteOfficer = async(id)=>{
 
 
-await deleteDoc(
+const confirmDelete =
 
-doc(db,"officers",id)
+confirm(
+
+"Sigurado ka bang gusto mong burahin ito?"
 
 );
 
 
 
+if(!confirmDelete)
+
+return;
+
+
+
+
+
+await deleteDoc(
+
+doc(
+
+db,
+
+"officers",
+
+id
+
+)
+
+);
+
+
+
+
+
 loadOfficers();
+
 
 
 };
@@ -272,5 +472,7 @@ loadOfficers();
 
 
 
+
+// INITIAL LOAD
 
 loadOfficers();
