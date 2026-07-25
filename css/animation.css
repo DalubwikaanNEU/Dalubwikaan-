@@ -1,43 +1,74 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
    ANIMATIONS.CSS
-   FINAL BEIGE & GOLD THEME
+   VERSION 2.0
+   PREMIUM MOTION SYSTEM
 ======================================================= */
 
 
 /* =========================================
-   FADE ANIMATIONS
+   FADE IN SYSTEM
 ========================================= */
+
 
 .fade-in{
 
+
     opacity:0;
 
-    animation:fadeIn 1s ease forwards;
+
+    animation:
+
+    fadeIn .8s ease forwards;
+
 
 }
+
+
+
+
+
 
 
 @keyframes fadeIn{
 
+
     from{
+
 
         opacity:0;
 
-        transform:translateY(30px);
+
+        transform:
+
+        translateY(25px);
+
 
     }
+
 
 
     to{
 
+
         opacity:1;
 
-        transform:translateY(0);
+
+        transform:
+
+        translateY(0);
+
 
     }
 
+
 }
+
+
+
+
+
+
 
 
 
@@ -45,317 +76,1236 @@
    REVEAL ON SCROLL
 ========================================= */
 
+
 .reveal{
+
 
     opacity:0;
 
-    transform:translateY(40px);
+
+    transform:
+
+    translateY(40px);
+
 
     transition:
+
 
     opacity .8s ease,
 
     transform .8s ease;
 
+
 }
+
+
+
+
+
 
 
 .reveal.active{
 
+
     opacity:1;
 
-    transform:translateY(0);
+
+    transform:
+
+    translateY(0);
+
 
 }
+
+
+
+
+
+
 
 
 
 /* =========================================
-   SLIDE EFFECTS
+   REVEAL DIRECTIONS
 ========================================= */
 
-.slide-left{
+
+.reveal-left{
+
 
     opacity:0;
 
-    transform:translateX(-50px);
+
+    transform:
+
+    translateX(-40px);
+
+
+    transition:
+
+    .8s ease;
+
+
+}
+
+
+
+
+
+
+
+.reveal-right{
+
+
+    opacity:0;
+
+
+    transform:
+
+    translateX(40px);
+
+
+    transition:
+
+    .8s ease;
+
+
+}
+
+
+
+
+
+
+
+.reveal-left.active,
+.reveal-right.active{
+
+
+    opacity:1;
+
+
+    transform:
+
+    translateX(0);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   SLIDE ANIMATIONS
+========================================= */
+
+
+.slide-left{
+
+
+    opacity:0;
+
 
     animation:
 
+
     slideLeft .8s ease forwards;
 
+
 }
+
+
+
+
 
 
 
 .slide-right{
 
+
     opacity:0;
 
-    transform:translateX(50px);
 
     animation:
 
+
     slideRight .8s ease forwards;
 
+
 }
+
+
+
+
 
 
 
 @keyframes slideLeft{
 
-    to{
 
-        opacity:1;
+    from{
 
-        transform:translateX(0);
+
+        opacity:0;
+
+
+        transform:
+
+        translateX(-50px);
+
 
     }
 
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateX(0);
+
+
+    }
+
+
 }
+
+
+
+
 
 
 
 @keyframes slideRight{
 
-    to{
 
-        opacity:1;
+    from{
 
-        transform:translateX(0);
+
+        opacity:0;
+
+
+        transform:
+
+        translateX(50px);
+
 
     }
 
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateX(0);
+
+
+    }
+
+
 }
+
+
+
+
+
+
 
 
 
 /* =========================================
-   FLOATING EFFECT
+   STAGGER ANIMATION
 ========================================= */
 
-.float{
+
+.stagger > *{
+
+
+    opacity:0;
+
 
     animation:
 
-    floating 5s ease-in-out infinite;
+
+    staggerFade .7s ease forwards;
+
 
 }
+
+
+
+
+
+
+
+.stagger > *:nth-child(1){
+
+    animation-delay:.1s;
+
+}
+
+
+.stagger > *:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+
+.stagger > *:nth-child(3){
+
+    animation-delay:.3s;
+
+}
+
+
+.stagger > *:nth-child(4){
+
+    animation-delay:.4s;
+
+}
+
+
+.stagger > *:nth-child(5){
+
+    animation-delay:.5s;
+
+}
+
+
+
+
+
+
+
+@keyframes staggerFade{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:
+
+        translateY(25px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+}
+/* =========================================
+   FLOATING EFFECT
+========================================= */
+
+
+.float{
+
+
+    animation:
+
+
+    floating 5s ease-in-out infinite;
+
+
+}
+
+
+
+
 
 
 
 @keyframes floating{
 
+
     0%,
     100%{
 
-        transform:translateY(0);
+
+        transform:
+
+        translateY(0);
+
 
     }
+
 
 
     50%{
 
-        transform:translateY(-15px);
+
+        transform:
+
+        translateY(-15px);
+
 
     }
 
+
 }
+
+
+
+
+
+
 
 
 
 /* =========================================
-   GLOW EFFECT
+   PREMIUM HOVER LIFT
 ========================================= */
 
-.gold-glow{
-
-    animation:
-
-    goldGlow 3s infinite;
-
-}
-
-
-
-@keyframes goldGlow{
-
-    0%{
-
-        box-shadow:
-
-        0 0 0 rgba(198,161,91,0);
-
-    }
-
-
-    50%{
-
-        box-shadow:
-
-        0 0 25px rgba(198,161,91,.35);
-
-    }
-
-
-    100%{
-
-        box-shadow:
-
-        0 0 0 rgba(198,161,91,0);
-
-    }
-
-}
-
-
-
-/* =========================================
-   LOADER ANIMATION
-========================================= */
-
-#loader{
-
-    position:fixed;
-
-    inset:0;
-
-    background:var(--footer);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:9999;
-
-    transition:.6s ease;
-
-}
-
-
-
-#loader.hidden{
-
-    opacity:0;
-
-    visibility:hidden;
-
-}
-
-
-
-.loader-content{
-
-    text-align:center;
-
-}
-
-
-
-.loader-content h1{
-
-    color:var(--white);
-
-    letter-spacing:3px;
-
-}
-
-
-
-.loader-content p{
-
-    color:var(--secondary-light);
-
-}
-
-
-
-.loader-line{
-
-    width:150px;
-
-    height:3px;
-
-    background:var(--secondary);
-
-    margin:1.5rem auto;
-
-    animation:
-
-    loaderMove 1.5s infinite;
-
-}
-
-
-
-@keyframes loaderMove{
-
-    0%{
-
-        transform:scaleX(.2);
-
-        opacity:.5;
-
-    }
-
-
-    50%{
-
-        transform:scaleX(1);
-
-        opacity:1;
-
-    }
-
-
-    100%{
-
-        transform:scaleX(.2);
-
-        opacity:.5;
-
-    }
-
-}
-
-
-
-/* =========================================
-   HOVER LIFT
-========================================= */
 
 .hover-lift{
 
-    transition:var(--transition);
+
+    transition:
+
+    var(--transition);
+
 
 }
+
+
+
+
 
 
 
 .hover-lift:hover{
 
-    transform:translateY(-8px);
+
+    transform:
+
+    translateY(-8px);
+
+
+    box-shadow:
+
+
+    var(--shadow-lg);
+
 
 }
 
 
 
+
+
+
+
+
+
 /* =========================================
-   REDUCED MOTION SUPPORT
+   GOLD GLOW EFFECT
 ========================================= */
 
+
+.gold-glow{
+
+
+    animation:
+
+
+    goldGlow 3s ease-in-out infinite;
+
+
+}
+
+
+
+
+
+
+
+@keyframes goldGlow{
+
+
+    0%{
+
+
+        box-shadow:
+
+        0 0 0 rgba(198,161,91,0);
+
+
+    }
+
+
+
+    50%{
+
+
+        box-shadow:
+
+
+        0 0 30px rgba(198,161,91,.35);
+
+
+    }
+
+
+
+    100%{
+
+
+        box-shadow:
+
+        0 0 0 rgba(198,161,91,0);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   SHIMMER EFFECT
+========================================= */
+
+
+.shimmer{
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+
+
+.shimmer::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    top:0;
+
+
+    left:-120%;
+
+
+    width:80%;
+
+
+    height:100%;
+
+
+    background:
+
+
+    linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+
+    transition:.8s ease;
+
+
+}
+
+
+
+
+
+
+
+.shimmer:hover::before{
+
+
+    left:120%;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   CARD HOVER MOTION
+========================================= */
+
+
+.card,
+.content-box,
+.project-box,
+.officer-card{
+
+
+    transition:
+
+    transform .35s ease,
+
+    box-shadow .35s ease;
+
+
+}
+
+
+
+
+
+
+
+.card:hover,
+.content-box:hover,
+.project-box:hover,
+.officer-card:hover{
+
+
+    transform:
+
+    translateY(-8px);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   ICON POP EFFECT
+========================================= */
+
+
+.icon-pop{
+
+
+    transition:
+
+    transform .35s ease;
+
+
+}
+
+
+
+
+
+
+
+.icon-pop:hover{
+
+
+    transform:
+
+
+    scale(1.12)
+
+    rotate(5deg);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   BUTTON PRESS EFFECT
+========================================= */
+
+
+.btn:active{
+
+
+    transform:
+
+    scale(.96);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   IMAGE ZOOM EFFECT
+========================================= */
+
+
+.image-zoom{
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+
+
+.image-zoom img{
+
+
+    transition:
+
+    transform .5s ease;
+
+
+}
+
+
+
+
+
+
+
+.image-zoom:hover img{
+
+
+    transform:
+
+    scale(1.08);
+
+
+}
+/* =========================================
+   PAGE TRANSITION
+========================================= */
+
+
+body{
+
+    animation:
+
+    pageEnter .6s ease forwards;
+
+}
+
+
+
+
+
+
+
+@keyframes pageEnter{
+
+
+    from{
+
+
+        opacity:0;
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   LOADER SYSTEM
+========================================= */
+
+
+#loader{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    background:
+
+
+    var(--footer);
+
+
+    z-index:9999;
+
+
+    transition:
+
+    opacity .6s ease,
+
+    visibility .6s ease;
+
+
+}
+
+
+
+
+
+
+
+#loader.hidden{
+
+
+    opacity:0;
+
+
+    visibility:hidden;
+
+
+}
+
+
+
+
+
+
+
+
+
+.loader-content{
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+
+
+.loader-content h1{
+
+
+    color:
+
+    var(--white);
+
+
+    font-family:
+
+    var(--font-heading);
+
+
+    letter-spacing:
+
+    3px;
+
+
+    font-size:
+
+    2rem;
+
+
+}
+
+
+
+
+
+
+
+.loader-content p{
+
+
+    color:
+
+    var(--secondary-light);
+
+
+    margin-top:
+
+    .5rem;
+
+
+}
+
+
+
+
+
+
+
+
+
+.loader-line{
+
+
+    width:
+
+    160px;
+
+
+    height:
+
+    3px;
+
+
+    margin:
+
+    1.5rem auto;
+
+
+    border-radius:
+
+    var(--radius-round);
+
+
+    background:
+
+
+    linear-gradient(
+
+        90deg,
+
+        var(--secondary-dark),
+
+        var(--secondary-light),
+
+        var(--secondary-dark)
+
+    );
+
+
+    animation:
+
+
+    loaderMove 1.5s infinite;
+
+
+}
+
+
+
+
+
+
+
+@keyframes loaderMove{
+
+
+    0%{
+
+
+        transform:
+
+        scaleX(.2);
+
+
+        opacity:.4;
+
+
+    }
+
+
+
+    50%{
+
+
+        transform:
+
+        scaleX(1);
+
+
+        opacity:1;
+
+
+    }
+
+
+
+    100%{
+
+
+        transform:
+
+        scaleX(.2);
+
+
+        opacity:.4;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   DARK MODE ANIMATION SUPPORT
+========================================= */
+
+
+[data-theme="dark"] #loader{
+
+
+    background:
+
+    #111111;
+
+
+}
+
+
+
+
+
+
+
+[data-theme="dark"] .gold-glow{
+
+
+    animation:
+
+    goldGlowDark 3s infinite;
+
+
+}
+
+
+
+
+
+
+
+@keyframes goldGlowDark{
+
+
+    0%{
+
+
+        box-shadow:
+
+        0 0 0 rgba(232,209,154,0);
+
+
+    }
+
+
+
+    50%{
+
+
+        box-shadow:
+
+        0 0 35px rgba(232,209,154,.25);
+
+
+    }
+
+
+
+    100%{
+
+
+        box-shadow:
+
+        0 0 0 rgba(232,209,154,0);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   MOBILE PERFORMANCE
+========================================= */
+
+
+@media(max-width:768px){
+
+
+    .float{
+
+
+        animation-duration:
+
+        7s;
+
+
+    }
+
+
+
+    .gold-glow{
+
+
+        animation:none;
+
+
+    }
+
+
+
+    .shimmer::before{
+
+
+        display:none;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+
 @media(prefers-reduced-motion:reduce){
+
 
     *,
     *::before,
     *::after{
 
-        animation-duration:.01ms !important;
 
-        transition-duration:.01ms !important;
+        animation-duration:
+
+        .01ms !important;
+
+
+        animation-iteration-count:
+
+        1 !important;
+
+
+        transition-duration:
+
+        .01ms !important;
+
+
+        scroll-behavior:
+
+        auto !important;
+
 
     }
+
 
 }
