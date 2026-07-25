@@ -1,16 +1,15 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
-   HERO CSS
-   VERSION 1.0
+   HERO.CSS
+   FINAL BEIGE & GOLD THEME
 ======================================================= */
 
+
 /* =========================================
-   HERO
+   HERO SECTION
 ========================================= */
 
 #hero{
-
-    position:relative;
 
     min-height:100vh;
 
@@ -18,190 +17,57 @@
 
     align-items:center;
 
-    justify-content:center;
+    position:relative;
 
     overflow:hidden;
 
     background:
-        linear-gradient(rgba(11,110,79,.78),
-        rgba(11,110,79,.78)),
-        url("../assets/images/hero-bg.jpg");
 
-    background-size:cover;
+    radial-gradient(
+        circle at top right,
+        rgba(198,161,91,.35),
+        transparent 35%
+    ),
 
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    color:var(--white);
-
-    text-align:center;
-
-}
-
-/* =========================================
-   OVERLAY
-========================================= */
-
-.hero-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-        to bottom,
-        rgba(0,0,0,.15),
-        rgba(0,0,0,.45)
+    linear-gradient(
+        135deg,
+        #3A3027,
+        #6F6258
     );
 
 }
 
-/* =========================================
-   CONTENT
-========================================= */
-
-.hero-content{
-
-    position:relative;
-
-    z-index:2;
-
-    max-width:900px;
-
-}
 
 /* =========================================
-   TAGLINE
-========================================= */
-
-.tagline{
-
-    display:inline-block;
-
-    padding:.7rem 1.4rem;
-
-    border-radius:999px;
-
-    background:rgba(255,255,255,.12);
-
-    border:1px solid rgba(255,255,255,.25);
-
-    backdrop-filter:blur(8px);
-
-    color:var(--white);
-
-    font-size:.95rem;
-
-    margin-bottom:1.5rem;
-
-}
-
-/* =========================================
-   TITLE
-========================================= */
-
-.hero-content h1{
-
-    font-size:clamp(3rem,7vw,5.5rem);
-
-    font-weight:var(--fw-extrabold);
-
-    color:var(--white);
-
-    margin-bottom:1.5rem;
-
-    line-height:1.1;
-
-}
-
-/* =========================================
-   DESCRIPTION
-========================================= */
-
-.hero-content p{
-
-    max-width:760px;
-
-    margin:0 auto;
-
-    font-size:1.15rem;
-
-    color:rgba(255,255,255,.92);
-
-    line-height:1.9;
-
-}
-
-/* =========================================
-   BUTTONS
-========================================= */
-
-.hero-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:1.2rem;
-
-    flex-wrap:wrap;
-
-    margin-top:2.5rem;
-
-}
-
-/* =========================================
-   SCROLL INDICATOR
-========================================= */
-
-.scroll-indicator{
-
-    position:absolute;
-
-    bottom:35px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:.5rem;
-
-    color:rgba(255,255,255,.9);
-
-    z-index:5;
-
-    animation:bounce 2s infinite;
-
-}
-
-.scroll-indicator span{
-
-    font-size:.85rem;
-
-    letter-spacing:1px;
-
-}
-
-.scroll-indicator i{
-
-    font-size:1.2rem;
-
-}
-
-/* =========================================
-   DECORATIVE CIRCLES
+   DECORATIVE BACKGROUND
 ========================================= */
 
 #hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(231,216,201,.15);
+
+    top:-150px;
+
+    right:-150px;
+
+    animation:floatShape 8s ease-in-out infinite;
+
+}
+
+
+#hero::after{
 
     content:"";
 
@@ -213,73 +79,281 @@
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.08);
+    background:
 
-    top:-120px;
-
-    left:-120px;
-
-    filter:blur(2px);
-
-}
-
-#hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:280px;
-
-    height:280px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.06);
+    rgba(198,161,91,.18);
 
     bottom:-120px;
 
-    right:-80px;
+    left:-100px;
+
+    animation:floatShape 10s ease-in-out infinite reverse;
 
 }
 
+
 /* =========================================
-   RESPONSIVE
+   HERO OVERLAY
+========================================= */
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        rgba(46,36,29,.85),
+        rgba(46,36,29,.45)
+    );
+
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:850px;
+
+    padding-top:5rem;
+
+}
+
+
+/* =========================================
+   TAGLINE
+========================================= */
+
+.tagline{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:.6rem 1.2rem;
+
+    border-radius:var(--radius-round);
+
+    background:
+
+    rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    color:var(--secondary-light);
+
+    font-size:.9rem;
+
+    font-weight:var(--fw-semibold);
+
+    margin-bottom:1.8rem;
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.hero-content h1{
+
+    font-size:
+
+    clamp(3rem,7vw,5.8rem);
+
+    line-height:1.05;
+
+    color:var(--white);
+
+    font-weight:var(--fw-extrabold);
+
+    letter-spacing:-2px;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+.hero-content h1::first-letter{
+
+    color:var(--secondary-light);
+
+}
+
+
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
+
+.hero-content p{
+
+    max-width:680px;
+
+    color:
+
+    rgba(255,255,255,.82);
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+    margin-bottom:2.5rem;
+
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+}
+
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:2.5rem;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:.7rem;
+
+    color:rgba(255,255,255,.7);
+
+    font-size:.8rem;
+
+    z-index:2;
+
+}
+
+
+.scroll-indicator i{
+
+    color:var(--secondary-light);
+
+    animation:
+
+    bounce 2s infinite;
+
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes floatShape{
+
+    0%,
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-30px);
+
+    }
+
+}
+
+
+@keyframes bounce{
+
+    0%,
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(8px);
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
 ========================================= */
 
 @media(max-width:768px){
 
     #hero{
 
-        padding:120px 0 80px;
-
-        min-height:auto;
+        min-height:90vh;
 
     }
 
-    .hero-content h1{
 
-        font-size:2.7rem;
+    .hero-content{
+
+        text-align:center;
+
+        padding-top:4rem;
 
     }
+
 
     .hero-content p{
 
-        font-size:1rem;
+        margin-left:auto;
+
+        margin-right:auto;
 
     }
+
 
     .hero-buttons{
 
-        flex-direction:column;
+        justify-content:center;
 
     }
 
-    .hero-buttons .btn{
 
-        width:100%;
+    .scroll-indicator{
 
-        max-width:320px;
+        display:none;
 
     }
 
