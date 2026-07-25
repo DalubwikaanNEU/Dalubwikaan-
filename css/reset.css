@@ -1,0 +1,245 @@
+/* =======================================================
+   DALUBWIKAAN PORTAL
+   RESET CSS
+   VERSION 1.0
+======================================================= */
+
+/* =========================================
+   UNIVERSAL RESET
+========================================= */
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+/* =========================================
+   HTML
+========================================= */
+
+html{
+
+    scroll-behavior:smooth;
+
+    scroll-padding-top:90px;
+
+    font-size:16px;
+
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+
+    font-family:var(--font-body);
+
+    color:var(--text);
+
+    background:var(--background);
+
+    line-height:1.7;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    -webkit-font-smoothing:antialiased;
+
+    text-rendering:optimizeLegibility;
+
+}
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:var(--font-heading);
+
+    color:var(--text);
+
+    font-weight:var(--fw-bold);
+
+    line-height:1.2;
+
+}
+
+/* =========================================
+   PARAGRAPH
+========================================= */
+
+p{
+
+    color:var(--text-light);
+
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+}
+
+/* =========================================
+   LIST
+========================================= */
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+/* =========================================
+   IMAGES
+========================================= */
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font:inherit;
+
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input,
+textarea,
+select{
+
+    font:inherit;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+table{
+
+    border-collapse:collapse;
+
+    width:100%;
+
+}
+
+/* =========================================
+   HR
+========================================= */
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:var(--border);
+
+}
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ececec;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* =========================================
+   FOCUS ACCESSIBILITY
+========================================= */
+
+:focus-visible{
+
+    outline:3px solid var(--secondary);
+
+    outline-offset:3px;
+
+}
