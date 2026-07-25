@@ -1,28 +1,14 @@
 // =======================================================
 // DALUBWIKAAN PORTAL
 // DOCUMENTS.JS
-// FIREBASE READY DOCUMENT ARCHIVE
+// DOCUMENT ARCHIVE SYSTEM
 // =======================================================
 
 
 
-console.log("DOCUMENTS JS CONNECTED");
-
-
-
-
-// =========================================
-// DOCUMENT DATA
-// TEMPORARY DATA
-// Papalitan ng Firebase later
-// =========================================
-
-
 const documents = [
 
-
     {
-
         title: "Financial Reports",
 
         description:
@@ -33,13 +19,10 @@ const documents = [
 
         icon:
         "fa-file-lines"
-
     },
 
 
-
     {
-
         title: "Receipts",
 
         description:
@@ -50,13 +33,10 @@ const documents = [
 
         icon:
         "fa-receipt"
-
     },
 
 
-
     {
-
         title: "Project Documents",
 
         description:
@@ -67,20 +47,12 @@ const documents = [
 
         icon:
         "fa-folder"
-
     }
-
 
 ];
 
 
 
-
-
-
-// =========================================
-// LOAD DOCUMENTS
-// =========================================
 
 
 function loadDocuments(){
@@ -91,16 +63,17 @@ function loadDocuments(){
 
 
 
+    console.log("Document container:", container);
+
+
+
     if(!container){
 
-
         console.error(
-        "Document container not found."
+        "Walang .document-grid na nakita!"
         );
 
-
         return;
-
 
     }
 
@@ -110,163 +83,67 @@ function loadDocuments(){
 
 
 
+    documents.forEach(doc=>{
 
 
-    documents.forEach((doc)=>{
+        container.innerHTML += `
 
 
-
-        const card =
-        document.createElement("div");
+        <article class="document-card">
 
 
+            <div class="document-icon">
 
-        card.classList.add(
-        "document-card"
-        );
+                <i class="fa-solid ${doc.icon}"></i>
 
-
-
-
-        card.innerHTML = `
-
-
-        <div class="document-icon">
-
-
-            <i class="fa-solid ${doc.icon}"></i>
-
-
-        </div>
+            </div>
 
 
 
-
-        <div class="document-content">
-
+            <div class="document-content">
 
 
-            <h3>
-
-                ${doc.title}
-
-            </h3>
+                <h3>
+                    ${doc.title}
+                </h3>
 
 
 
-
-            <p>
-
-                ${doc.description}
-
-            </p>
+                <p>
+                    ${doc.description}
+                </p>
 
 
 
-
-            <span>
-
-                ${doc.category}
-
-            </span>
+                <span>
+                    ${doc.category}
+                </span>
 
 
 
-        </div>
+            </div>
 
 
 
+            <button 
+            class="btn btn-primary document-view">
 
 
-        <button 
-        type="button"
-        class="btn btn-primary document-view"
-        data-title="${doc.title}">
+                <i class="fa-solid fa-eye"></i>
+
+                Tingnan
 
 
-            <i class="fa-solid fa-eye"></i>
-
-
-            Tingnan
+            </button>
 
 
 
-        </button>
-
+        </article>
 
 
         `;
 
 
-
-
-        container.appendChild(card);
-
-
-
-    });
-
-
-
-
-    setupDocumentButtons();
-
-
-
-}
-
-
-
-
-
-
-
-// =========================================
-// BUTTON FUNCTIONS
-// =========================================
-
-
-function setupDocumentButtons(){
-
-
-
-    const buttons =
-    document.querySelectorAll(
-    ".document-view"
-    );
-
-
-
-    buttons.forEach((button)=>{
-
-
-
-        button.addEventListener(
-        "click",
-        ()=>{
-
-
-
-            const title =
-            button.dataset.title;
-
-
-
-
-            alert(
-
-            `${title}
-
-Ang dokumento ay magiging available kapag nakakonekta na ang Firebase Storage.`
-
-            );
-
-
-
-        });
-
-
-
     });
 
 
@@ -277,19 +154,6 @@ Ang dokumento ay magiging available kapag nakakonekta na ang Firebase Storage.`
 
 
 
+// LOAD DIRECTLY
 
-
-// =========================================
-// INITIALIZE
-// =========================================
-
-
-document.addEventListener(
-"DOMContentLoaded",
-()=>{
-
-
-    loadDocuments();
-
-
-});
+loadDocuments();
