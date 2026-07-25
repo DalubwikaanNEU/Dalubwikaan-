@@ -5,15 +5,24 @@
 // =======================================================
 
 
+
+console.log("DOCUMENTS JS CONNECTED");
+
+
+
+
 // =========================================
 // DOCUMENT DATA
 // TEMPORARY DATA
 // Papalitan ng Firebase later
 // =========================================
 
+
 const documents = [
 
+
     {
+
         title: "Financial Reports",
 
         description:
@@ -24,10 +33,13 @@ const documents = [
 
         icon:
         "fa-file-lines"
+
     },
 
 
+
     {
+
         title: "Receipts",
 
         description:
@@ -38,10 +50,13 @@ const documents = [
 
         icon:
         "fa-receipt"
+
     },
 
 
+
     {
+
         title: "Project Documents",
 
         description:
@@ -52,9 +67,13 @@ const documents = [
 
         icon:
         "fa-folder"
+
     }
 
+
 ];
+
+
 
 
 
@@ -67,21 +86,34 @@ const documents = [
 function loadDocuments(){
 
 
-    const documentContainer =
+    const container =
     document.querySelector(".document-grid");
 
 
 
-    if(!documentContainer)
-    return;
+    if(!container){
+
+
+        console.error(
+        "Document container not found."
+        );
+
+
+        return;
+
+
+    }
 
 
 
-    documentContainer.innerHTML = "";
+    container.innerHTML = "";
+
+
 
 
 
     documents.forEach((doc)=>{
+
 
 
         const card =
@@ -89,57 +121,77 @@ function loadDocuments(){
 
 
 
-        card.className =
-        "document-card";
+        card.classList.add(
+        "document-card"
+        );
+
 
 
 
         card.innerHTML = `
 
 
-            <div class="document-icon">
-
-                <i class="fa-solid ${doc.icon}"></i>
-
-            </div>
+        <div class="document-icon">
 
 
+            <i class="fa-solid ${doc.icon}"></i>
 
-            <div class="document-content">
 
-
-                <h3>
-                    ${doc.title}
-                </h3>
+        </div>
 
 
 
-                <p>
-                    ${doc.description}
-                </p>
+
+        <div class="document-content">
 
 
 
-                <span>
-                    ${doc.category}
-                </span>
+            <h3>
+
+                ${doc.title}
+
+            </h3>
 
 
-            </div>
+
+
+            <p>
+
+                ${doc.description}
+
+            </p>
 
 
 
-            <button 
-            class="btn btn-primary document-view"
-            data-document="${doc.title}">
+
+            <span>
+
+                ${doc.category}
+
+            </span>
 
 
-                <i class="fa-solid fa-eye"></i>
 
-                Tingnan
+        </div>
 
 
-            </button>
+
+
+
+        <button 
+        type="button"
+        class="btn btn-primary document-view"
+        data-title="${doc.title}">
+
+
+            <i class="fa-solid fa-eye"></i>
+
+
+            Tingnan
+
+
+
+        </button>
 
 
 
@@ -147,7 +199,8 @@ function loadDocuments(){
 
 
 
-        documentContainer.appendChild(card);
+
+        container.appendChild(card);
 
 
 
@@ -155,7 +208,9 @@ function loadDocuments(){
 
 
 
-    activateDocumentButtons();
+
+    setupDocumentButtons();
+
 
 
 }
@@ -165,20 +220,25 @@ function loadDocuments(){
 
 
 
+
 // =========================================
-// DOCUMENT BUTTON ACTION
+// BUTTON FUNCTIONS
 // =========================================
 
 
-function activateDocumentButtons(){
+function setupDocumentButtons(){
+
 
 
     const buttons =
-    document.querySelectorAll(".document-view");
+    document.querySelectorAll(
+    ".document-view"
+    );
 
 
 
     buttons.forEach((button)=>{
+
 
 
         button.addEventListener(
@@ -186,27 +246,34 @@ function activateDocumentButtons(){
         ()=>{
 
 
-            const documentName =
-            button.dataset.document;
+
+            const title =
+            button.dataset.title;
+
 
 
 
             alert(
 
-            `${documentName}
+            `${title}
 
-            \n\nAng dokumento ay magiging available kapag nakakonekta na ang Firebase Storage.`
+Ang dokumento ay magiging available kapag nakakonekta na ang Firebase Storage.`
 
             );
+
 
 
         });
 
 
+
     });
 
 
+
 }
+
+
 
 
 
