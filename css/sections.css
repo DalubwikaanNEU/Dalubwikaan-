@@ -2355,3 +2355,95 @@ table tbody tr:last-child td{
 
 
 }
+
+/* =======================================================
+   DOCUMENT ARCHIVE POLISH
+======================================================= */
+
+
+.document-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.document-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        var(--secondary-dark),
+        var(--secondary-light)
+    );
+
+}
+
+
+
+.document-card:hover .document-icon{
+
+    transform:rotate(-5deg) scale(1.05);
+
+}
+
+
+
+.document-icon{
+
+    transition:.35s ease;
+
+}
+
+
+
+.document-content h3{
+
+    color:var(--text);
+
+}
+
+
+
+.document-content p{
+
+    min-height:55px;
+
+}
+
+
+
+.document-view{
+
+    width:100%;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    .document-card{
+
+        padding:1.5rem;
+
+    }
+
+
+}
