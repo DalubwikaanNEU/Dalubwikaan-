@@ -1,66 +1,22 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
-   ANIMATIONS CSS
-   VERSION 1.0
+   ANIMATIONS.CSS
+   FINAL BEIGE & GOLD THEME
 ======================================================= */
 
-/* =========================================
-   GLOBAL TRANSITIONS
-========================================= */
-
-*{
-
-    transition:
-        background-color .30s ease,
-        color .30s ease,
-        border-color .30s ease,
-        box-shadow .30s ease;
-
-}
 
 /* =========================================
-   HOVER LIFT
-========================================= */
-
-.hover-lift{
-
-    transition:transform .35s ease, box-shadow .35s ease;
-
-}
-
-.hover-lift:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:var(--shadow-lg);
-
-}
-
-/* =========================================
-   HOVER SCALE
-========================================= */
-
-.hover-scale{
-
-    transition:transform .35s ease;
-
-}
-
-.hover-scale:hover{
-
-    transform:scale(1.05);
-
-}
-
-/* =========================================
-   FADE IN
+   FADE ANIMATIONS
 ========================================= */
 
 .fade-in{
 
-    animation:fadeIn .8s ease forwards;
+    opacity:0;
+
+    animation:fadeIn 1s ease forwards;
 
 }
+
 
 @keyframes fadeIn{
 
@@ -68,35 +24,10 @@
 
         opacity:0;
 
-    }
-
-    to{
-
-        opacity:1;
+        transform:translateY(30px);
 
     }
 
-}
-
-/* =========================================
-   SLIDE UP
-========================================= */
-
-.slide-up{
-
-    animation:slideUp .8s ease forwards;
-
-}
-
-@keyframes slideUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(40px);
-
-    }
 
     to{
 
@@ -108,279 +39,26 @@
 
 }
 
-/* =========================================
-   SLIDE LEFT
-========================================= */
 
-.slide-left{
-
-    animation:slideLeft .8s ease forwards;
-
-}
-
-@keyframes slideLeft{
-
-    from{
-
-        opacity:0;
-
-        transform:translateX(-50px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateX(0);
-
-    }
-
-}
 
 /* =========================================
-   SLIDE RIGHT
-========================================= */
-
-.slide-right{
-
-    animation:slideRight .8s ease forwards;
-
-}
-
-@keyframes slideRight{
-
-    from{
-
-        opacity:0;
-
-        transform:translateX(50px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateX(0);
-
-    }
-
-}
-
-/* =========================================
-   ZOOM IN
-========================================= */
-
-.zoom-in{
-
-    animation:zoomIn .7s ease forwards;
-
-}
-
-@keyframes zoomIn{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(.85);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-/* =========================================
-   BOUNCE
-========================================= */
-
-@keyframes bounce{
-
-    0%,20%,50%,80%,100%{
-
-        transform:translateY(0);
-
-    }
-
-    40%{
-
-        transform:translateY(-10px);
-
-    }
-
-    60%{
-
-        transform:translateY(-5px);
-
-    }
-
-}
-
-/* =========================================
-   FLOAT
-========================================= */
-
-.float{
-
-    animation:float 4s ease-in-out infinite;
-
-}
-
-@keyframes float{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-12px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* =========================================
-   ROTATE
-========================================= */
-
-.rotate:hover{
-
-    transform:rotate(8deg);
-
-}
-
-/* =========================================
-   PULSE
-========================================= */
-
-.pulse{
-
-    animation:pulse 2s infinite;
-
-}
-
-@keyframes pulse{
-
-    0%{
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.05);
-
-    }
-
-    100%{
-
-        transform:scale(1);
-
-    }
-
-}
-
-/* =========================================
-   SHIMMER
-========================================= */
-
-.shimmer{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-.shimmer::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-150%;
-
-    width:50%;
-
-    height:100%;
-
-    background:
-
-    linear-gradient(
-
-        90deg,
-
-        transparent,
-
-        rgba(255,255,255,.45),
-
-        transparent
-
-    );
-
-    transform:skewX(-25deg);
-
-}
-
-.shimmer:hover::after{
-
-    animation:shimmer 1s ease;
-
-}
-
-@keyframes shimmer{
-
-    from{
-
-        left:-150%;
-
-    }
-
-    to{
-
-        left:170%;
-
-    }
-
-}
-
-/* =========================================
-   SCROLL REVEAL
+   REVEAL ON SCROLL
 ========================================= */
 
 .reveal{
 
     opacity:0;
 
-    transform:translateY(50px);
+    transform:translateY(40px);
 
     transition:
 
-        opacity .8s ease,
+    opacity .8s ease,
 
-        transform .8s ease;
+    transform .8s ease;
 
 }
+
 
 .reveal.active{
 
@@ -390,51 +68,293 @@
 
 }
 
-/* =========================================
-   DELAYS
-========================================= */
 
-.delay-1{
-
-    animation-delay:.15s;
-
-}
-
-.delay-2{
-
-    animation-delay:.30s;
-
-}
-
-.delay-3{
-
-    animation-delay:.45s;
-
-}
-
-.delay-4{
-
-    animation-delay:.60s;
-
-}
 
 /* =========================================
-   REDUCED MOTION
+   SLIDE EFFECTS
 ========================================= */
 
-@media (prefers-reduced-motion: reduce){
+.slide-left{
+
+    opacity:0;
+
+    transform:translateX(-50px);
+
+    animation:
+
+    slideLeft .8s ease forwards;
+
+}
+
+
+
+.slide-right{
+
+    opacity:0;
+
+    transform:translateX(50px);
+
+    animation:
+
+    slideRight .8s ease forwards;
+
+}
+
+
+
+@keyframes slideLeft{
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+
+@keyframes slideRight{
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+
+/* =========================================
+   FLOATING EFFECT
+========================================= */
+
+.float{
+
+    animation:
+
+    floating 5s ease-in-out infinite;
+
+}
+
+
+
+@keyframes floating{
+
+    0%,
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+
+/* =========================================
+   GLOW EFFECT
+========================================= */
+
+.gold-glow{
+
+    animation:
+
+    goldGlow 3s infinite;
+
+}
+
+
+
+@keyframes goldGlow{
+
+    0%{
+
+        box-shadow:
+
+        0 0 0 rgba(198,161,91,0);
+
+    }
+
+
+    50%{
+
+        box-shadow:
+
+        0 0 25px rgba(198,161,91,.35);
+
+    }
+
+
+    100%{
+
+        box-shadow:
+
+        0 0 0 rgba(198,161,91,0);
+
+    }
+
+}
+
+
+
+/* =========================================
+   LOADER ANIMATION
+========================================= */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:var(--footer);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:9999;
+
+    transition:.6s ease;
+
+}
+
+
+
+#loader.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+
+
+.loader-content h1{
+
+    color:var(--white);
+
+    letter-spacing:3px;
+
+}
+
+
+
+.loader-content p{
+
+    color:var(--secondary-light);
+
+}
+
+
+
+.loader-line{
+
+    width:150px;
+
+    height:3px;
+
+    background:var(--secondary);
+
+    margin:1.5rem auto;
+
+    animation:
+
+    loaderMove 1.5s infinite;
+
+}
+
+
+
+@keyframes loaderMove{
+
+    0%{
+
+        transform:scaleX(.2);
+
+        opacity:.5;
+
+    }
+
+
+    50%{
+
+        transform:scaleX(1);
+
+        opacity:1;
+
+    }
+
+
+    100%{
+
+        transform:scaleX(.2);
+
+        opacity:.5;
+
+    }
+
+}
+
+
+
+/* =========================================
+   HOVER LIFT
+========================================= */
+
+.hover-lift{
+
+    transition:var(--transition);
+
+}
+
+
+
+.hover-lift:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+/* =========================================
+   REDUCED MOTION SUPPORT
+========================================= */
+
+@media(prefers-reduced-motion:reduce){
 
     *,
-
     *::before,
-
     *::after{
 
-        animation:none !important;
+        animation-duration:.01ms !important;
 
-        transition:none !important;
-
-        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
 
     }
 
