@@ -1,133 +1,42 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
-   VARIABLES
+   MASTER STYLESHEET
    VERSION 1.0
 ======================================================= */
 
-:root{
+/* =========================================
+   GOOGLE FONTS
+========================================= */
 
-    /* =====================================
-       COLORS
-    ===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
 
-    --primary:#0B6E4F;
+/* =========================================
+   CORE
+========================================= */
 
-    --primary-dark:#07543D;
+@import url("variables.css");
+@import url("reset.css");
+@import url("layout.css");
 
-    --secondary:#D4AF37;
+/* =========================================
+   COMPONENTS
+========================================= */
 
-    --accent:#2F855A;
+@import url("buttons.css");
+@import url("header.css");
+@import url("hero.css");
+@import url("cards.css");
+@import url("sections.css");
+@import url("footer.css");
 
-    --success:#22C55E;
+/* =========================================
+   EFFECTS
+========================================= */
 
-    --warning:#F59E0B;
+@import url("animations.css");
 
-    --danger:#DC2626;
+/* =========================================
+   RESPONSIVE
+========================================= */
 
-    --white:#FFFFFF;
-
-    --background:#F8FAFC;
-
-    --surface:#FFFFFF;
-
-    --border:#E5E7EB;
-
-    --text:#111827;
-
-    --text-light:#6B7280;
-
-    --footer:#111827;
-
-    --shadow:0 10px 30px rgba(0,0,0,.08);
-
-    --shadow-lg:0 20px 60px rgba(0,0,0,.12);
-
-    /* =====================================
-       TYPOGRAPHY
-    ===================================== */
-
-    --font-heading:'Poppins',sans-serif;
-
-    --font-body:'Inter',sans-serif;
-
-    --fs-xs:.75rem;
-
-    --fs-sm:.875rem;
-
-    --fs-md:1rem;
-
-    --fs-lg:1.125rem;
-
-    --fs-xl:1.5rem;
-
-    --fs-2xl:2rem;
-
-    --fs-3xl:2.8rem;
-
-    --fs-4xl:4rem;
-
-    /* =====================================
-       FONT WEIGHT
-    ===================================== */
-
-    --fw-light:300;
-
-    --fw-normal:400;
-
-    --fw-medium:500;
-
-    --fw-semibold:600;
-
-    --fw-bold:700;
-
-    --fw-extrabold:800;
-
-    /* =====================================
-       BORDER RADIUS
-    ===================================== */
-
-    --radius-sm:8px;
-
-    --radius-md:14px;
-
-    --radius-lg:20px;
-
-    --radius-xl:30px;
-
-    --radius-round:999px;
-
-    /* =====================================
-       SPACING
-    ===================================== */
-
-    --space-1:.25rem;
-
-    --space-2:.5rem;
-
-    --space-3:.75rem;
-
-    --space-4:1rem;
-
-    --space-5:1.5rem;
-
-    --space-6:2rem;
-
-    --space-7:3rem;
-
-    --space-8:4rem;
-
-    --space-9:6rem;
-
-    /* =====================================
-       CONTAINER
-    ===================================== */
-
-    --container:1280px;
-
-    /* =====================================
-       TRANSITIONS
-    ===================================== */
-
-    --transition:.35s ease;
-
-}
+@import url("responsive.css");
