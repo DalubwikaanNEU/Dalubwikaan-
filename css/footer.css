@@ -1,0 +1,253 @@
+/* =======================================================
+   DALUBWIKAAN PORTAL
+   FOOTER CSS
+   VERSION 1.0
+======================================================= */
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+    background:var(--footer);
+
+    color:var(--white);
+
+    padding:5rem 0 2rem;
+
+}
+
+/* =========================================
+   FOOTER GRID
+========================================= */
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1.5fr;
+
+    gap:3rem;
+
+}
+
+/* =========================================
+   FOOTER COLUMN
+========================================= */
+
+.footer-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.footer-column h2{
+
+    color:var(--white);
+
+    font-size:2rem;
+
+    margin-bottom:1rem;
+
+    letter-spacing:2px;
+
+}
+
+.footer-column h3{
+
+    color:var(--white);
+
+    font-size:1.15rem;
+
+    margin-bottom:1.25rem;
+
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.footer-column p{
+
+    color:rgba(255,255,255,.75);
+
+    margin-bottom:.9rem;
+
+    line-height:1.8;
+
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+.footer-column a{
+
+    color:rgba(255,255,255,.75);
+
+    margin-bottom:.8rem;
+
+    transition:var(--transition);
+
+}
+
+.footer-column a:hover{
+
+    color:var(--secondary);
+
+    padding-left:8px;
+
+}
+
+/* =========================================
+   HORIZONTAL LINE
+========================================= */
+
+footer hr{
+
+    margin:3rem 0 2rem;
+
+    background:rgba(255,255,255,.12);
+
+}
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
+.footer-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
+
+.footer-bottom p{
+
+    color:rgba(255,255,255,.65);
+
+    margin:0;
+
+}
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.footer-social{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+.footer-social a{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:var(--white);
+
+    transition:var(--transition);
+
+}
+
+.footer-social a:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-4px);
+
+}
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.copyright{
+
+    text-align:center;
+
+    margin-top:1.5rem;
+
+    font-size:.9rem;
+
+    color:rgba(255,255,255,.60);
+
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:992px){
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    footer{
+
+        text-align:center;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        gap:2.5rem;
+
+    }
+
+    .footer-column{
+
+        align-items:center;
+
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        justify-content:center;
+
+    }
+
+    .footer-social{
+
+        justify-content:center;
+
+    }
+
+}
