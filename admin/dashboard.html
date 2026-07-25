@@ -22,15 +22,34 @@ Dalubwikaan Admin Dashboard
 
 
 
+
 <body>
+
+
+
+<!-- =========================================
+ADMIN HEADER
+========================================= -->
 
 
 <header>
 
 
+<div>
+
 <h1>
 DALUBWIKAAN ADMIN
 </h1>
+
+
+<p>
+Management Dashboard
+</p>
+
+
+</div>
+
+
 
 
 <button id="logout">
@@ -46,6 +65,12 @@ Logout
 
 
 
+
+<!-- =========================================
+MAIN DASHBOARD
+========================================= -->
+
+
 <main>
 
 
@@ -54,68 +79,202 @@ Dashboard
 </h2>
 
 
+<p>
+Pamahalaan ang nilalaman ng Dalubwikaan Portal.
+</p>
+
+
+
+
+
 <div class="dashboard-grid">
 
 
-<div>
+
+
+
+<!-- OFFICERS -->
+
+
+<div 
+class="dashboard-card"
+onclick="window.location.href='officers.html'">
+
 
 <h3>
+<i class="fa-solid fa-users"></i>
 Officers
 </h3>
 
+
 <p>
-Manage Officers
+Manage officers, positions, photos, at profiles.
 </p>
+
+
+<button>
+
+Open
+
+</button>
+
 
 </div>
 
 
 
-<div>
+
+
+
+
+<!-- PROGRAMS -->
+
+
+<div 
+class="dashboard-card"
+onclick="window.location.href='programs.html'">
+
 
 <h3>
+<i class="fa-solid fa-book-open"></i>
 Programs
 </h3>
 
+
 <p>
-Manage Programs
+Manage organizational programs and activities.
 </p>
+
+
+<button>
+
+Open
+
+</button>
+
 
 </div>
 
 
 
-<div>
+
+
+
+
+<!-- ANNOUNCEMENTS -->
+
+
+<div 
+class="dashboard-card"
+onclick="window.location.href='announcements.html'">
+
 
 <h3>
+<i class="fa-solid fa-bullhorn"></i>
 Announcements
 </h3>
 
+
 <p>
-Manage Announcements
+Create and update announcements.
 </p>
+
+
+<button>
+
+Open
+
+</button>
+
 
 </div>
 
 
 
-<div>
+
+
+
+
+<!-- DOCUMENTS -->
+
+
+<div 
+class="dashboard-card"
+onclick="window.location.href='documents.html'">
+
 
 <h3>
+<i class="fa-solid fa-folder-open"></i>
 Documents
 </h3>
 
+
 <p>
-Manage Transparency Files
+Manage transparency files and archives.
 </p>
 
-</div>
+
+<button>
+
+Open
+
+</button>
 
 
 </div>
+
+
+
+
+
+
+
+<!-- REPORTS -->
+
+
+<div 
+class="dashboard-card"
+onclick="window.location.href='reports.html'">
+
+
+<h3>
+<i class="fa-solid fa-chart-line"></i>
+Reports
+</h3>
+
+
+<p>
+Manage reports and uploaded records.
+</p>
+
+
+<button>
+
+Open
+
+</button>
+
+
+</div>
+
+
+
+
+
+</div>
+
 
 
 </main>
+
+
+
+
+
+
+<script 
+src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js">
+</script>
 
 
 
@@ -123,5 +282,6 @@ Manage Transparency Files
 
 
 </body>
+
 
 </html>
