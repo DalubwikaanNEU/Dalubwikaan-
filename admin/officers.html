@@ -2,6 +2,7 @@
 
 <html lang="fil">
 
+
 <head>
 
 <meta charset="UTF-8">
@@ -10,29 +11,51 @@
 
 
 <title>
-Manage Officers | Dalubwikaan Admin
+Officers Management | Dalubwikaan Admin
 </title>
 
 
 <link rel="stylesheet" href="css/admin.css">
 
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </head>
+
+
 
 
 <body>
 
 
 
+
 <header>
+
+
+<div>
 
 <h1>
 OFFICERS MANAGEMENT
 </h1>
 
 
+<p>
+Pamamahala ng Lupon ng mga Opisyales
+</p>
+
+
+</div>
+
+
+
+
 <button id="logout">
+
 Logout
+
 </button>
 
 
@@ -42,48 +65,105 @@ Logout
 
 
 
+
+
 <main>
+
 
 
 <section class="admin-form">
 
 
+
 <h2>
-Add Officer
+
+<i class="fa-solid fa-user-plus"></i>
+
+Magdagdag ng Opisyal
+
 </h2>
 
 
 
-<input 
+
+
+<input
+
+type="text"
+
 id="name"
-placeholder="Officer Name">
+
+placeholder="Pangalan ng Opisyal"
+
+>
 
 
 
-<input 
+
+
+<input
+
+type="text"
+
 id="position"
-placeholder="Position">
+
+placeholder="Posisyon"
+
+>
+
+
+
 
 
 
 <textarea
+
 id="description"
-placeholder="Description">
+
+placeholder="Maikling paglalarawan">
+
 </textarea>
 
 
 
 
-<input 
+
+
+<input
+
 type="number"
+
 id="order"
-placeholder="Display Order">
+
+placeholder="Display Order"
+
+>
+
+
+
+
+
+
+<label>
+
+Larawan ng Opisyal
+
+</label>
+
+
 
 
 
 <input
+
 type="file"
-id="photo">
+
+id="photo"
+
+accept="image/*"
+
+>
+
 
 
 
@@ -91,7 +171,11 @@ id="photo">
 
 <button id="saveOfficer">
 
+
+<i class="fa-solid fa-save"></i>
+
 Save Officer
+
 
 </button>
 
@@ -104,16 +188,27 @@ Save Officer
 
 
 
+
+
+
 <section>
 
 
+
 <h2>
-Current Officers
+
+<i class="fa-solid fa-users"></i>
+
+Kasalukuyang Opisyales
+
 </h2>
 
 
 
+
+
 <div id="officerList">
+
 
 </div>
 
@@ -123,7 +218,11 @@ Current Officers
 
 
 
+
+
+
 </main>
+
 
 
 
