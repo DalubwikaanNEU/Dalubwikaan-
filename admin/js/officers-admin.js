@@ -1,8 +1,8 @@
 // =======================================================
 // DALUBWIKAAN ADMIN
 // OFFICERS MANAGEMENT SYSTEM
-// FIREBASE FIRESTORE + STORAGE
-// ADD / DELETE READY
+// FIREBASE CRUD
+// ADD / EDIT / DELETE
 // =======================================================
 
 
@@ -27,28 +27,14 @@ getDocs,
 deleteDoc,
 doc,
 query,
-orderBy
+orderBy,
+updateDoc
 
 }
 
 from
 
 "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-
-
-
-import {
-
-ref,
-uploadBytes,
-getDownloadURL
-
-}
-
-from
-
-"https://www.gstatic.com/firebasejs/11.0.2/firebase-storage.js";
-
 
 
 
@@ -66,12 +52,29 @@ const list =
 document.querySelector("#officerList");
 
 
+const nameInput =
+document.querySelector("#name");
+
+
+const positionInput =
+document.querySelector("#position");
+
+
+const descriptionInput =
+document.querySelector("#description");
+
+
+const orderInput =
+document.querySelector("#order");
+
+
+let editingID = null;
 
 
 
 
 // =========================================
-// ADD OFFICER
+// SAVE / UPDATE OFFICER
 // =========================================
 
 
@@ -79,97 +82,73 @@ saveButton.onclick = async()=>{
 
 
 const name =
-document.querySelector("#name").value.trim();
-
+nameInput.value.trim();
 
 
 const position =
-document.querySelector("#position").value.trim();
-
+positionInput.value.trim();
 
 
 const description =
-document.querySelector("#description").value.trim();
-
+descriptionInput.value.trim();
 
 
 const order =
-Number(
-document.querySelector("#order").value
-);
+Number(orderInput.value) || 999;
 
 
 
-const file =
-document.querySelector("#photo").files[0];
-
-
-
-
-
-if(
-!name ||
-!position
-){
-
+if(!name || !position){
 
 alert(
 "Pakilagay ang pangalan at posisyon."
 );
 
-
 return;
 
-
 }
 
 
 
 
+// UPDATE MODE
 
-let photoURL = "";
-
-
-
+if(editingID){
 
 
-// =========================================
-// UPLOAD IMAGE
-// =========================================
+await updateDoc(
 
+doc(
+db,
+"officers",
+editingID
+),
 
-if(file){
+{
 
+name,
+position,
+description,
+order
 
-const imageRef =
-
-ref(
-
-storage,
-
-`officers/${Date.now()}-${file.name}`
-
-);
-
-
-
-await uploadBytes(
-
-imageRef,
-
-file
+}
 
 );
 
 
 
-photoURL =
-
-await getDownloadURL(
-
-imageRef
-
+alert(
+"Na-update ang opisyal."
 );
+
+
+
+editingID = null;
+
+
+saveButton.innerHTML =
+"Save Officer";
+
 
 
 }
@@ -177,13 +156,9 @@ imageRef
 
 
 
+// ADD MODE
 
-
-
-
-// =========================================
-// SAVE FIRESTORE
-// =========================================
+else{
 
 
 await addDoc(
@@ -192,17 +167,10 @@ collection(db,"officers"),
 
 {
 
-
-name:name,
-
-position:position,
-
-description:description,
-
-order:order || 999,
-
-photo:photoURL
-
+name,
+position,
+description,
+order
 
 }
 
@@ -210,39 +178,22 @@ photo:photoURL
 
 
 
-
-
 alert(
-
-"Matagumpay na naidagdag ang opisyal."
-
+"Naidagdag ang opisyal."
 );
 
 
-
-
-
-// CLEAR FORM
-
-
-document.querySelector("#name").value="";
-document.querySelector("#position").value="";
-document.querySelector("#description").value="";
-document.querySelector("#order").value="";
-document.querySelector("#photo").value="";
+}
 
 
 
 
+clearForm();
 
 loadOfficers();
 
 
-
 };
-
-
-
 
 
 
@@ -258,16 +209,11 @@ async function loadOfficers(){
 
 
 list.innerHTML =
-
 "Loading officers...";
 
 
 
-
-
-const q =
-
-query(
+const q = query(
 
 collection(db,"officers"),
 
@@ -278,128 +224,63 @@ orderBy("order")
 
 
 const snapshot =
-
 await getDocs(q);
 
 
 
-
-
-list.innerHTML="";
-
+list.innerHTML = "";
 
 
 
 
-if(snapshot.empty){
+snapshot.forEach(item=>{
 
 
-list.innerHTML=
-
-`
-
-<p>
-Wala pang officers.
-</p>
-
-`;
-
-
-return;
-
-
-}
-
-
-
-
-
-
-snapshot.forEach((item)=>{
-
-
-const data = item.data();
-
-
+const data =
+item.data();
 
 
 
 list.innerHTML +=
-
-
 
 `
 
 <div class="admin-card">
 
 
-
-${
-
-data.photo
-
-?
-
-`
-
-<img 
-src="${data.photo}"
-class="officer-preview">
-
-`
-
-:
-
-""
-
-}
-
-
-
-
-
 <h3>
-
 ${data.name}
-
 </h3>
 
 
-
-
 <p>
-
 ${data.position}
-
 </p>
-
-
 
 
 <p>
-
 ${data.description || ""}
-
 </p>
 
 
 
+<button onclick="editOfficer('${item.id}')">
 
-<button
-onclick="deleteOfficer('${item.id}')">
+Edit
+
+</button>
 
 
-<i class="fa-solid fa-trash"></i>
+
+<button onclick="deleteOfficer('${item.id}')">
 
 Delete
-
 
 </button>
 
 
 
 </div>
-
 
 `;
 
@@ -410,6 +291,81 @@ Delete
 
 
 }
+
+
+
+
+
+
+// =========================================
+// EDIT OFFICER
+// =========================================
+
+
+window.editOfficer = async(id)=>{
+
+
+const officerRef =
+doc(
+db,
+"officers",
+id
+);
+
+
+
+const snapshot =
+await getDocs(
+collection(db,"officers")
+);
+
+
+
+snapshot.forEach(item=>{
+
+
+if(item.id === id){
+
+
+const data =
+item.data();
+
+
+
+nameInput.value =
+data.name;
+
+
+positionInput.value =
+data.position;
+
+
+descriptionInput.value =
+data.description || "";
+
+
+orderInput.value =
+data.order || "";
+
+
+
+editingID = id;
+
+
+
+saveButton.innerHTML =
+"Update Officer";
+
+
+
+}
+
+
+});
+
+
+
+};
 
 
 
@@ -427,11 +383,8 @@ window.deleteOfficer = async(id)=>{
 
 
 const confirmDelete =
-
 confirm(
-
-"Sigurado ka bang gusto mong burahin ito?"
-
+"Sigurado ka bang buburahin ito?"
 );
 
 
@@ -442,28 +395,25 @@ return;
 
 
 
-
-
 await deleteDoc(
 
 doc(
-
 db,
-
 "officers",
-
 id
-
 )
 
 );
 
 
 
+alert(
+"Nabura ang opisyal."
+);
+
 
 
 loadOfficers();
-
 
 
 };
@@ -473,26 +423,35 @@ loadOfficers();
 
 
 
-// INITIAL LOAD
 
-loadOfficers();
 
 // =========================================
-// LOGOUT
+// CLEAR FORM
 // =========================================
 
-const logoutButton = document.querySelector("#logout");
+
+function clearForm(){
 
 
-if(logoutButton){
+nameInput.value="";
 
-    logoutButton.addEventListener(
-        "click",
-        ()=>{
+positionInput.value="";
 
-            window.location.href = "../index.html";
+descriptionInput.value="";
 
-        }
-    );
+orderInput.value="";
+
+document.querySelector("#photo").value="";
+
 
 }
+
+
+
+
+// =========================================
+// INITIAL LOAD
+// =========================================
+
+
+loadOfficers();
