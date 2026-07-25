@@ -1,13 +1,14 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
    HEADER.CSS
-   FINAL BEIGE & GOLD THEME
+   PREMIUM BEIGE & GOLD DESIGN
 ======================================================= */
 
 
 /* =========================================
    HEADER
 ========================================= */
+
 
 #header{
 
@@ -21,33 +22,45 @@
 
     z-index:1000;
 
-    padding:1.3rem 0;
+    padding:1.5rem 0;
 
-    transition:var(--transition);
+    transition:.4s ease;
 
 }
 
 
+
+
+
 /* =========================================
-   HEADER SCROLLED STATE
+   SCROLLED HEADER
 ========================================= */
+
 
 #header.scrolled{
 
-    background:rgba(255,255,255,.85);
+    background:
 
-    backdrop-filter:blur(15px);
+    rgba(255,255,255,.92);
 
-    box-shadow:var(--shadow);
+    backdrop-filter:blur(18px);
 
-    padding:.8rem 0;
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.08);
+
+    padding:.85rem 0;
 
 }
 
 
+
+
+
 /* =========================================
-   HEADER CONTAINER
+   CONTAINER
 ========================================= */
+
 
 #header .container{
 
@@ -60,9 +73,13 @@
 }
 
 
+
+
+
 /* =========================================
    BRAND
 ========================================= */
+
 
 .brand{
 
@@ -75,41 +92,50 @@
 }
 
 
+
 .brand h1{
 
-    font-size:1.5rem;
+    font-size:1.55rem;
 
-    letter-spacing:1px;
+    letter-spacing:2px;
+
+    font-weight:800;
 
     color:var(--white);
 
-    font-weight:var(--fw-extrabold);
-
-    transition:var(--transition);
+    transition:.3s ease;
 
 }
+
 
 
 .brand span{
 
-    margin-top:.35rem;
+    margin-top:.45rem;
 
-    font-size:.75rem;
+    font-size:.7rem;
 
-    color:rgba(255,255,255,.8);
+    letter-spacing:1px;
 
-    letter-spacing:.5px;
+    color:
+
+    rgba(255,255,255,.75);
+
+    text-transform:uppercase;
 
 }
 
 
-/* Change brand when scrolling */
+
+/* Scrolled */
+
 
 #header.scrolled .brand h1{
 
     color:var(--text);
 
 }
+
 
 
 #header.scrolled .brand span{
@@ -119,9 +145,13 @@
 }
 
 
+
+
+
 /* =========================================
    NAVIGATION
 ========================================= */
+
 
 #navbar ul{
 
@@ -129,24 +159,28 @@
 
     align-items:center;
 
-    gap:1.8rem;
+    gap:2rem;
 
 }
+
 
 
 #navbar a{
 
     position:relative;
 
-    color:var(--white);
+    color:white;
 
-    font-size:.9rem;
+    font-size:.88rem;
 
-    font-weight:var(--fw-medium);
+    font-weight:500;
 
-    transition:var(--transition);
+    transition:.3s ease;
 
 }
+
+
+
 
 
 #header.scrolled #navbar a{
@@ -156,35 +190,46 @@
 }
 
 
-/* underline animation */
 
-#navbar a::after{
+
+
+#navbar a::before{
 
     content:"";
 
     position:absolute;
 
-    left:0;
+    left:50%;
 
-    bottom:-8px;
+    bottom:-10px;
 
     width:0;
 
     height:2px;
 
-    background:var(--secondary);
+    background:
 
-    transition:var(--transition);
+    var(--secondary);
+
+    transform:translateX(-50%);
+
+    transition:.3s ease;
 
 }
 
 
-#navbar a:hover::after,
-#navbar a.active::after{
+
+
+
+#navbar a:hover::before,
+#navbar a.active::before{
 
     width:100%;
 
 }
+
+
+
 
 
 #navbar a:hover,
@@ -195,9 +240,13 @@
 }
 
 
+
+
+
 /* =========================================
    HEADER RIGHT
 ========================================= */
+
 
 .header-right{
 
@@ -210,9 +259,13 @@
 }
 
 
+
+
+
 /* =========================================
    ADMIN BUTTON
 ========================================= */
+
 
 .admin-button{
 
@@ -220,71 +273,131 @@
 
     align-items:center;
 
-    gap:.5rem;
+    gap:.6rem;
 
-    padding:.65rem 1.2rem;
+    padding:.7rem 1.4rem;
 
-    border-radius:var(--radius-round);
+    border-radius:50px;
 
-    background:rgba(255,255,255,.15);
+    background:
 
-    border:1px solid rgba(255,255,255,.35);
+    rgba(255,255,255,.12);
 
-    color:var(--white);
+    border:
+
+    1px solid rgba(255,255,255,.35);
+
+    color:white;
 
     font-size:.85rem;
 
-    transition:var(--transition);
+    font-weight:600;
+
+    transition:.35s ease;
+
+    backdrop-filter:blur(10px);
 
 }
 
 
-#header.scrolled .admin-button{
 
-    background:var(--primary-light);
-
-    border-color:var(--border);
-
-    color:var(--text);
-
-}
 
 
 .admin-button:hover{
 
-    background:var(--secondary);
+    background:
 
-    color:var(--white);
+    var(--secondary);
+
+    color:white;
+
+    transform:translateY(-3px);
 
 }
+
+
+
+
+
+#header.scrolled .admin-button{
+
+    background:
+
+    var(--primary-light);
+
+    color:var(--text);
+
+    border-color:var(--border);
+
+}
+
+
+
+
+
+#header.scrolled .admin-button:hover{
+
+    background:
+
+    var(--secondary);
+
+    color:white;
+
+}
+
+
+
 
 
 /* =========================================
    MENU BUTTON
 ========================================= */
 
+
 #menuButton{
 
     display:none;
 
-    width:42px;
+    width:44px;
 
-    height:42px;
+    height:44px;
 
     border-radius:50%;
 
-    background:var(--secondary);
+    background:
 
-    color:var(--white);
+    var(--secondary);
 
-    font-size:1.1rem;
+    color:white;
+
+    font-size:1.2rem;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.3s ease;
 
 }
+
+
+
+
+
+#menuButton:hover{
+
+    transform:rotate(90deg);
+
+}
+
+
+
 
 
 /* =========================================
    MOBILE MENU
 ========================================= */
+
 
 #mobileMenu{
 
@@ -294,27 +407,44 @@
 
     right:-100%;
 
-    width:300px;
+    width:320px;
+
+    max-width:85%;
 
     height:100vh;
 
-    background:var(--white);
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        #ffffff,
+
+        #f8efe5
+
+    );
 
     z-index:1100;
 
     padding:6rem 2rem 2rem;
 
-    box-shadow:var(--shadow-lg);
+    box-shadow:
+
+    -10px 0 40px rgba(0,0,0,.15);
 
     display:flex;
 
     flex-direction:column;
 
-    gap:1.3rem;
+    gap:1.2rem;
 
-    transition:.4s ease;
+    transition:.45s ease;
 
 }
+
+
+
 
 
 #mobileMenu.active{
@@ -324,36 +454,60 @@
 }
 
 
+
+
+
 #mobileMenu a{
 
     color:var(--text);
 
-    font-weight:var(--fw-medium);
+    font-weight:600;
+
+    padding:.5rem 0;
+
+    transition:.3s ease;
 
 }
+
+
+
 
 
 #mobileMenu a:hover{
 
-    color:var(--secondary-dark);
+    color:
+
+    var(--secondary-dark);
+
+    padding-left:10px;
 
 }
+
+
+
 
 
 #mobileMenu hr{
 
     border:none;
 
-    border-top:1px solid var(--border);
+    border-top:
+
+    1px solid var(--border);
 
 }
 
 
+
+
+
 /* =========================================
-   RESPONSIVE
+   TABLET / MOBILE
 ========================================= */
 
+
 @media(max-width:1100px){
+
 
     #navbar{
 
@@ -362,15 +516,13 @@
     }
 
 
+
     #menuButton{
 
         display:flex;
 
-        align-items:center;
-
-        justify-content:center;
-
     }
+
 
 
     .admin-button{
@@ -378,5 +530,6 @@
         display:none;
 
     }
+
 
 }
