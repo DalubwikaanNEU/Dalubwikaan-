@@ -476,3 +476,23 @@ loadOfficers();
 // INITIAL LOAD
 
 loadOfficers();
+
+// =========================================
+// LOGOUT
+// =========================================
+
+const logoutButton = document.querySelector("#logout");
+
+
+if(logoutButton){
+
+    logoutButton.addEventListener(
+        "click",
+        ()=>{
+
+            window.location.href = "../index.html";
+
+        }
+    );
+
+}
