@@ -141,3 +141,33 @@ grid-template-columns:1fr;
 }
 
 }
+#logout{
+
+    background:#b89552;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    font-family:Poppins, sans-serif;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+
+#logout:hover{
+
+    transform:translateY(-3px);
+
+    opacity:.85;
+
+}
