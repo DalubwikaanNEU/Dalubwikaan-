@@ -5,30 +5,16 @@
 // =======================================================
 
 
-
 // =========================================
-// DOCUMENT CONTAINER
-// =========================================
-
-const documentContainer = document.querySelector(
-    ".document-grid"
-);
-
-
-
-
-
-// =========================================
+// DOCUMENT DATA
 // TEMPORARY DATA
-// (Papaltan ng Firebase)
+// Papalitan ng Firebase later
 // =========================================
-
 
 const documents = [
 
     {
-        title:
-        "Financial Reports",
+        title: "Financial Reports",
 
         description:
         "Mga ulat pinansyal at budget reports ng organisasyon.",
@@ -42,8 +28,7 @@ const documents = [
 
 
     {
-        title:
-        "Receipts",
+        title: "Receipts",
 
         description:
         "Mga resibo at patunay ng mga transaksyon.",
@@ -57,8 +42,7 @@ const documents = [
 
 
     {
-        title:
-        "Project Documents",
+        title: "Project Documents",
 
         description:
         "Mga dokumento kaugnay ng mga programa at proyekto.",
@@ -70,19 +54,22 @@ const documents = [
         "fa-folder"
     }
 
-
 ];
 
 
 
 
-
 // =========================================
-// DISPLAY DOCUMENTS
+// LOAD DOCUMENTS
 // =========================================
 
 
 function loadDocuments(){
+
+
+    const documentContainer =
+    document.querySelector(".document-grid");
+
 
 
     if(!documentContainer)
@@ -94,10 +81,12 @@ function loadDocuments(){
 
 
 
-    documents.forEach(doc => {
+    documents.forEach((doc)=>{
 
 
-        const card = document.createElement("div");
+        const card =
+        document.createElement("div");
+
 
 
         card.className =
@@ -108,44 +97,49 @@ function loadDocuments(){
         card.innerHTML = `
 
 
-        <div class="document-icon">
+            <div class="document-icon">
 
-            <i class="fa-solid ${doc.icon}"></i>
+                <i class="fa-solid ${doc.icon}"></i>
 
-        </div>
-
-
-
-        <div>
-
-            <h3>
-            ${doc.title}
-            </h3>
-
-
-            <p>
-            ${doc.description}
-            </p>
-
-
-            <span>
-            ${doc.category}
-            </span>
-
-        </div>
+            </div>
 
 
 
-        <a href="#"
-        class="btn btn-primary">
+            <div class="document-content">
 
 
-        <i class="fa-solid fa-eye"></i>
+                <h3>
+                    ${doc.title}
+                </h3>
 
-        Tingnan
 
 
-        </a>
+                <p>
+                    ${doc.description}
+                </p>
+
+
+
+                <span>
+                    ${doc.category}
+                </span>
+
+
+            </div>
+
+
+
+            <button 
+            class="btn btn-primary document-view"
+            data-document="${doc.title}">
+
+
+                <i class="fa-solid fa-eye"></i>
+
+                Tingnan
+
+
+            </button>
 
 
 
@@ -156,8 +150,60 @@ function loadDocuments(){
         documentContainer.appendChild(card);
 
 
+
     });
 
+
+
+    activateDocumentButtons();
+
+
+}
+
+
+
+
+
+
+// =========================================
+// DOCUMENT BUTTON ACTION
+// =========================================
+
+
+function activateDocumentButtons(){
+
+
+    const buttons =
+    document.querySelectorAll(".document-view");
+
+
+
+    buttons.forEach((button)=>{
+
+
+        button.addEventListener(
+        "click",
+        ()=>{
+
+
+            const documentName =
+            button.dataset.document;
+
+
+
+            alert(
+
+            `${documentName}
+
+            \n\nAng dokumento ay magiging available kapag nakakonekta na ang Firebase Storage.`
+
+            );
+
+
+        });
+
+
+    });
 
 
 }
@@ -175,6 +221,8 @@ document.addEventListener(
 "DOMContentLoaded",
 ()=>{
 
+
     loadDocuments();
+
 
 });
