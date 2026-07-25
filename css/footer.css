@@ -1,7 +1,7 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
    FOOTER.CSS
-   FINAL BEIGE & GOLD THEME
+   PREMIUM BEIGE & GOLD DESIGN
 ======================================================= */
 
 
@@ -9,11 +9,20 @@
    FOOTER
 ========================================= */
 
+
 footer{
 
-    background:var(--footer);
+    background:
 
-    color:rgba(255,255,255,.8);
+    linear-gradient(
+        135deg,
+        #2E241C,
+        #443528
+    );
+
+    color:
+
+    rgba(255,255,255,.8);
 
     padding:5rem 0 2rem;
 
@@ -24,7 +33,11 @@ footer{
 }
 
 
-/* Decorative element */
+
+
+
+/* Decorative circles */
+
 
 footer::before{
 
@@ -32,25 +45,56 @@ footer::before{
 
     position:absolute;
 
-    width:350px;
+    width:420px;
 
-    height:350px;
+    height:420px;
 
     border-radius:50%;
 
-    background:rgba(198,161,91,.12);
+    background:
 
-    top:-180px;
+    rgba(198,161,91,.12);
 
-    right:-100px;
+    top:-220px;
+
+    right:-120px;
 
 }
+
+
+
+
+
+footer::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(231,216,201,.08);
+
+    bottom:-120px;
+
+    left:-80px;
+
+}
+
+
 
 
 
 /* =========================================
    FOOTER GRID
 ========================================= */
+
 
 .footer-grid{
 
@@ -64,14 +108,18 @@ footer::before{
 
     position:relative;
 
-    z-index:1;
+    z-index:2;
 
 }
 
 
+
+
+
 /* =========================================
-   FOOTER BRAND
+   BRAND
 ========================================= */
+
 
 .footer-logo{
 
@@ -80,38 +128,58 @@ footer::before{
 }
 
 
+
+
+
 footer h3{
 
-    color:var(--white);
+    color:white;
 
-    font-size:1.6rem;
+    font-size:1.8rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
 
     margin-bottom:1rem;
 
-    letter-spacing:1px;
-
 }
+
+
+
 
 
 footer h4{
 
-    color:var(--secondary-light);
+    color:
+
+    var(--secondary-light);
 
     font-size:1rem;
 
-    margin-bottom:1.3rem;
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    margin-bottom:1.4rem;
 
 }
+
+
 
 
 
 footer p{
 
-    color:rgba(255,255,255,.65);
+    color:
 
-    line-height:1.8;
+    rgba(255,255,255,.65);
+
+    line-height:1.9;
 
 }
+
+
 
 
 
@@ -119,47 +187,61 @@ footer p{
    FOOTER LINKS
 ========================================= */
 
+
 footer ul{
 
     display:flex;
 
     flex-direction:column;
 
-    gap:.8rem;
+    gap:.9rem;
 
 }
+
+
 
 
 
 footer ul li a{
 
-    color:rgba(255,255,255,.7);
+    color:
 
-    transition:var(--transition);
+    rgba(255,255,255,.7);
+
+    transition:.3s ease;
 
 }
+
+
 
 
 
 footer ul li a:hover{
 
-    color:var(--secondary-light);
+    color:
 
-    padding-left:5px;
+    var(--secondary-light);
+
+    padding-left:8px;
 
 }
 
 
 
+
+
 /* =========================================
-   CONTACT INFO
+   CONTACT
 ========================================= */
+
 
 footer i{
 
-    color:var(--secondary-light);
+    color:
 
-    width:22px;
+    var(--secondary-light);
+
+    width:25px;
 
     margin-right:.5rem;
 
@@ -167,9 +249,12 @@ footer i{
 
 
 
+
+
 /* =========================================
-   DIVIDER
+   FOOTER DIVIDER
 ========================================= */
+
 
 footer hr{
 
@@ -179,15 +264,18 @@ footer hr{
 
     1px solid rgba(255,255,255,.15);
 
-    margin:3rem 0 1.5rem;
+    margin:3rem 0 1.8rem;
 
 }
+
+
 
 
 
 /* =========================================
    FOOTER BOTTOM
 ========================================= */
+
 
 .footer-bottom{
 
@@ -201,9 +289,11 @@ footer hr{
 
     position:relative;
 
-    z-index:1;
+    z-index:2;
 
 }
+
+
 
 
 
@@ -215,11 +305,52 @@ footer hr{
 
 
 
+
+
+/* =========================================
+   GOLD ACCENT
+========================================= */
+
+
+.footer-grid > div:first-child::before{
+
+    content:"";
+
+    display:block;
+
+    width:70px;
+
+    height:3px;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        var(--secondary),
+
+        var(--secondary-light)
+
+    );
+
+    margin-bottom:1.5rem;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
 /* =========================================
    RESPONSIVE
 ========================================= */
 
+
 @media(max-width:1000px){
+
 
     .footer-grid{
 
@@ -229,26 +360,32 @@ footer hr{
 
     }
 
+
 }
+
+
 
 
 
 @media(max-width:600px){
 
+
     footer{
 
-        padding-top:3rem;
+        padding-top:3.5rem;
 
     }
+
 
 
     .footer-grid{
 
         grid-template-columns:1fr;
 
-        gap:2rem;
+        gap:2.5rem;
 
     }
+
 
 
     .footer-bottom{
@@ -258,5 +395,6 @@ footer hr{
         text-align:center;
 
     }
+
 
 }
