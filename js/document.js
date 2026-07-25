@@ -5,73 +5,57 @@
 // =======================================================
 
 
-
 const documents = [
 
     {
         title: "Financial Reports",
-
         description:
         "Mga ulat pinansyal at budget reports ng organisasyon.",
-
-        category:
-        "Finance",
-
-        icon:
-        "fa-file-lines"
+        category: "Finance",
+        icon: "fa-file-lines"
     },
 
 
     {
         title: "Receipts",
-
         description:
         "Mga resibo at patunay ng mga transaksyon.",
-
-        category:
-        "Transparency",
-
-        icon:
-        "fa-receipt"
+        category: "Transparency",
+        icon: "fa-receipt"
     },
 
 
     {
         title: "Project Documents",
-
         description:
         "Mga dokumento kaugnay ng mga programa at proyekto.",
-
-        category:
-        "Programs",
-
-        icon:
-        "fa-folder"
+        category: "Programs",
+        icon: "fa-folder"
     }
 
 ];
 
 
 
-
-
 function loadDocuments(){
 
 
-    const container =
-    document.querySelector(".document-grid");
+    const container = document.querySelector(".document-grid");
 
 
+    console.log(
+        "DOCUMENT JS LOADED"
+    );
 
-    console.log("Document container:", container);
+
+    console.log(
+        "CONTAINER:",
+        container
+    );
 
 
 
     if(!container){
-
-        console.error(
-        "Walang .document-grid na nakita!"
-        );
 
         return;
 
@@ -79,17 +63,12 @@ function loadDocuments(){
 
 
 
-    container.innerHTML = "";
+    container.innerHTML = documents.map(doc => {
 
 
+        return `
 
-    documents.forEach(doc=>{
-
-
-        container.innerHTML += `
-
-
-        <article class="document-card">
+        <div class="document-card">
 
 
             <div class="document-icon">
@@ -108,11 +87,9 @@ function loadDocuments(){
                 </h3>
 
 
-
                 <p>
                     ${doc.description}
                 </p>
-
 
 
                 <span>
@@ -120,31 +97,26 @@ function loadDocuments(){
                 </span>
 
 
-
             </div>
 
 
 
-            <button 
-            class="btn btn-primary document-view">
-
+            <button class="btn btn-primary document-view">
 
                 <i class="fa-solid fa-eye"></i>
 
                 Tingnan
 
-
             </button>
 
 
 
-        </article>
-
+        </div>
 
         `;
 
 
-    });
+    }).join("");
 
 
 
@@ -153,7 +125,9 @@ function loadDocuments(){
 
 
 
+// WAIT FOR HTML FIRST
 
-// LOAD DIRECTLY
-
-loadDocuments();
+document.addEventListener(
+    "DOMContentLoaded",
+    loadDocuments
+);
