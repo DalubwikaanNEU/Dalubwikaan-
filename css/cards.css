@@ -1,28 +1,15 @@
 /* =======================================================
    DALUBWIKAAN PORTAL
-   CARDS CSS
-   VERSION 1.0
+   CARDS.CSS
+   FINAL BEIGE & GOLD THEME
 ======================================================= */
 
-/* =========================================
-   OFFICER GRID
-========================================= */
-
-.officer-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-    gap:2rem;
-
-}
 
 /* =========================================
-   OFFICER CARD
+   GENERAL CARD
 ========================================= */
 
-.officer-card{
+.card{
 
     background:var(--surface);
 
@@ -32,13 +19,95 @@
 
     padding:2rem;
 
-    text-align:center;
-
     box-shadow:var(--shadow);
 
     transition:var(--transition);
 
 }
+
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+
+/* =========================================
+   OFFICER CARDS
+========================================= */
+
+.officer-grid,
+.officers-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+    gap:2rem;
+
+}
+
+
+
+.officer-card{
+
+    background:var(--white);
+
+    border-radius:var(--radius-lg);
+
+    padding:2rem 1.5rem;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+.officer-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        var(--secondary),
+
+        var(--secondary-light)
+
+    );
+
+}
+
+
 
 .officer-card:hover{
 
@@ -48,7 +117,12 @@
 
 }
 
-.officer-image{
+
+
+/* Officer Image */
+
+.officer-image,
+.officer-card img{
 
     width:110px;
 
@@ -58,7 +132,7 @@
 
     border-radius:50%;
 
-    background:rgba(11,110,79,.10);
+    object-fit:cover;
 
     display:flex;
 
@@ -66,93 +140,169 @@
 
     justify-content:center;
 
-    color:var(--primary);
+    background:
+
+    var(--primary-light);
+
+    border:4px solid var(--secondary-light);
+
+    color:var(--secondary-dark);
 
     font-size:2.5rem;
 
 }
 
-.position{
+
+
+.officer-card .position{
 
     display:inline-block;
 
-    margin-bottom:1rem;
+    padding:.4rem 1rem;
 
-    padding:.45rem 1rem;
+    border-radius:var(--radius-round);
 
-    border-radius:999px;
+    background:var(--primary-light);
 
-    background:rgba(11,110,79,.10);
+    color:var(--secondary-dark);
 
-    color:var(--primary);
-
-    font-size:.85rem;
+    font-size:.8rem;
 
     font-weight:var(--fw-semibold);
 
+    margin-bottom:1rem;
+
 }
+
+
 
 .officer-card h3{
 
-    margin-bottom:.75rem;
+    font-size:1.2rem;
 
-    font-size:1.35rem;
+    margin-bottom:.5rem;
 
 }
+
+
 
 .officer-card p{
 
-    color:var(--text-light);
+    font-size:.9rem;
 
 }
 
+
+
 /* =========================================
-   ANNOUNCEMENTS
+   ANNOUNCEMENT CARDS
 ========================================= */
 
 .announcement-grid{
 
     display:grid;
 
-    grid-template-columns:2fr 1fr;
+    grid-template-columns:1.5fr 1fr;
 
     gap:2rem;
 
 }
 
+
+
 .announcement-feature{
 
-    background:var(--surface);
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        var(--primary-light),
+
+        var(--white)
+
+    );
+
+    padding:3rem;
 
     border-radius:var(--radius-lg);
 
-    padding:2rem;
-
     border:1px solid var(--border);
 
-    box-shadow:var(--shadow);
+    position:relative;
+
+    overflow:hidden;
 
 }
+
+
+
+.announcement-feature::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:200px;
+
+    height:200px;
+
+    background:var(--secondary-light);
+
+    opacity:.2;
+
+    border-radius:50%;
+
+    right:-80px;
+
+    bottom:-80px;
+
+}
+
+
+
+.badge{
+
+    display:inline-block;
+
+    background:var(--secondary);
+
+    color:var(--white);
+
+    padding:.4rem 1rem;
+
+    border-radius:var(--radius-round);
+
+    font-size:.75rem;
+
+    font-weight:var(--fw-bold);
+
+}
+
+
 
 .announcement-feature h3{
 
-    margin:1rem 0;
+    font-size:2rem;
+
+    margin:1.5rem 0;
 
 }
 
-.announcement-feature p{
 
-    margin-bottom:1.5rem;
-
-}
 
 .announcement-feature a{
 
-    color:var(--primary);
+    color:var(--secondary-dark);
 
     font-weight:var(--fw-semibold);
 
 }
+
+
+
+/* Announcement List */
 
 .announcement-list{
 
@@ -164,275 +314,200 @@
 
 }
 
+
+
 .announcement-item{
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
-    padding:1.25rem;
+    justify-content:space-between;
 
-    background:var(--surface);
+    padding:1.5rem;
+
+    background:var(--white);
 
     border:1px solid var(--border);
 
     border-radius:var(--radius-md);
 
-    box-shadow:var(--shadow);
-
     transition:var(--transition);
 
 }
+
+
 
 .announcement-item:hover{
 
-    transform:translateX(6px);
+    transform:translateX(8px);
+
+    border-color:var(--secondary);
 
 }
+
+
 
 .announcement-item h4{
 
-    margin-bottom:.4rem;
+    margin-bottom:.3rem;
 
 }
+
+
 
 .announcement-item small{
 
-    color:var(--text-light);
+    color:var(--text-muted);
 
 }
 
+
+
 /* =========================================
-   FINANCE CARDS
+   TRANSPARENCY CARDS
 ========================================= */
 
-.finance-grid{
+.transparency-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:
 
-    gap:2rem;
-
-}
-
-.finance-card{
-
-    background:var(--surface);
-
-    border-radius:var(--radius-lg);
-
-    padding:2rem;
-
-    text-align:center;
-
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow);
-
-    transition:var(--transition);
-
-}
-
-.finance-card:hover{
-
-    transform:translateY(-8px);
-
-}
-
-.finance-card i{
-
-    font-size:2.3rem;
-
-    color:var(--primary);
-
-    margin-bottom:1rem;
-
-}
-
-.finance-card span{
-
-    display:block;
-
-    color:var(--text-light);
-
-    margin-bottom:.75rem;
-
-}
-
-.finance-card h2{
-
-    color:var(--primary);
-
-    font-size:2rem;
-
-}
-
-/* =========================================
-   COLLECTION
-========================================= */
-
-.collection-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-    gap:2rem;
-
-}
-
-.collection-card{
-
-    background:var(--surface);
-
-    padding:2rem;
-
-    border-radius:var(--radius-lg);
-
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow);
-
-}
-
-.collection-card h3{
-
-    margin-bottom:1rem;
-
-}
-
-.progress-bar{
-
-    width:100%;
-
-    height:12px;
-
-    background:#e5e7eb;
-
-    border-radius:999px;
-
-    overflow:hidden;
-
-    margin-bottom:.8rem;
-
-}
-
-.progress{
-
-    height:100%;
-
-    background:var(--primary);
-
-    border-radius:999px;
-
-}
-
-/* =========================================
-   DOCUMENTS
-========================================= */
-
-.document-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-    gap:2rem;
-
-}
-
-.document-card{
-
-    background:var(--surface);
-
-    border-radius:var(--radius-lg);
-
-    padding:2rem;
-
-    text-align:center;
-
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow);
-
-    transition:var(--transition);
-
-}
-
-.document-card:hover{
-
-    transform:translateY(-8px);
-
-}
-
-.document-card i{
-
-    font-size:3rem;
-
-    color:#dc2626;
-
-    margin-bottom:1rem;
-
-}
-
-.document-card h3{
-
-    margin-bottom:1rem;
-
-}
-
-.document-card a{
-
-    color:var(--primary);
-
-    font-weight:var(--fw-semibold);
-
-}
-
-/* =========================================
-   GALLERY
-========================================= */
-
-.gallery-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    repeat(4,1fr);
 
     gap:1.5rem;
 
 }
 
-.gallery-item{
 
-    aspect-ratio:1;
 
-    background:#d9d9d9;
+.transparency-card{
+
+    background:var(--white);
+
+    padding:2rem;
+
+    text-align:center;
 
     border-radius:var(--radius-lg);
 
-    overflow:hidden;
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
 
     transition:var(--transition);
 
-    cursor:pointer;
+}
+
+
+
+.transparency-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--secondary);
 
 }
 
-.gallery-item:hover{
 
-    transform:scale(1.03);
+
+.transparency-card i{
+
+    font-size:2rem;
+
+    color:var(--secondary);
+
+    margin-bottom:1rem;
 
 }
+
+
+
+.transparency-card h2{
+
+    color:var(--secondary-dark);
+
+    margin-top:1rem;
+
+}
+
+
+
+/* =========================================
+   CTA BOX
+========================================= */
+
+.cta-box{
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        var(--primary),
+
+        var(--primary-light)
+
+    );
+
+    padding:4rem;
+
+    border-radius:var(--radius-xl);
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+}
+
+
+
+.cta-box h2{
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.cta-box p{
+
+    max-width:650px;
+
+    margin:0 auto 2rem;
+
+}
+
+
 
 /* =========================================
    RESPONSIVE
 ========================================= */
 
-@media(max-width:992px){
+@media(max-width:1000px){
+
+    .officer-grid,
+    .officers-grid{
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+    }
+
+
+    .transparency-grid{
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+    }
+
 
     .announcement-grid{
 
@@ -442,15 +517,29 @@
 
 }
 
-@media(max-width:768px){
+
+
+@media(max-width:600px){
 
     .officer-grid,
-    .finance-grid,
-    .collection-grid,
-    .document-grid,
-    .gallery-grid{
+    .officers-grid,
+    .transparency-grid{
 
         grid-template-columns:1fr;
+
+    }
+
+
+    .announcement-feature{
+
+        padding:2rem;
+
+    }
+
+
+    .cta-box{
+
+        padding:2.5rem 1.5rem;
 
     }
 
