@@ -1,0 +1,457 @@
+/* =======================================================
+   DALUBWIKAAN PORTAL
+   CARDS CSS
+   VERSION 1.0
+======================================================= */
+
+/* =========================================
+   OFFICER GRID
+========================================= */
+
+.officer-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:2rem;
+
+}
+
+/* =========================================
+   OFFICER CARD
+========================================= */
+
+.officer-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    padding:2rem;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.officer-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.officer-image{
+
+    width:110px;
+
+    height:110px;
+
+    margin:0 auto 1.5rem;
+
+    border-radius:50%;
+
+    background:rgba(11,110,79,.10);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--primary);
+
+    font-size:2.5rem;
+
+}
+
+.position{
+
+    display:inline-block;
+
+    margin-bottom:1rem;
+
+    padding:.45rem 1rem;
+
+    border-radius:999px;
+
+    background:rgba(11,110,79,.10);
+
+    color:var(--primary);
+
+    font-size:.85rem;
+
+    font-weight:var(--fw-semibold);
+
+}
+
+.officer-card h3{
+
+    margin-bottom:.75rem;
+
+    font-size:1.35rem;
+
+}
+
+.officer-card p{
+
+    color:var(--text-light);
+
+}
+
+/* =========================================
+   ANNOUNCEMENTS
+========================================= */
+
+.announcement-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:2rem;
+
+}
+
+.announcement-feature{
+
+    background:var(--surface);
+
+    border-radius:var(--radius-lg);
+
+    padding:2rem;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.announcement-feature h3{
+
+    margin:1rem 0;
+
+}
+
+.announcement-feature p{
+
+    margin-bottom:1.5rem;
+
+}
+
+.announcement-feature a{
+
+    color:var(--primary);
+
+    font-weight:var(--fw-semibold);
+
+}
+
+.announcement-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+}
+
+.announcement-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:1.25rem;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.announcement-item:hover{
+
+    transform:translateX(6px);
+
+}
+
+.announcement-item h4{
+
+    margin-bottom:.4rem;
+
+}
+
+.announcement-item small{
+
+    color:var(--text-light);
+
+}
+
+/* =========================================
+   FINANCE CARDS
+========================================= */
+
+.finance-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:2rem;
+
+}
+
+.finance-card{
+
+    background:var(--surface);
+
+    border-radius:var(--radius-lg);
+
+    padding:2rem;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.finance-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.finance-card i{
+
+    font-size:2.3rem;
+
+    color:var(--primary);
+
+    margin-bottom:1rem;
+
+}
+
+.finance-card span{
+
+    display:block;
+
+    color:var(--text-light);
+
+    margin-bottom:.75rem;
+
+}
+
+.finance-card h2{
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+}
+
+/* =========================================
+   COLLECTION
+========================================= */
+
+.collection-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:2rem;
+
+}
+
+.collection-card{
+
+    background:var(--surface);
+
+    padding:2rem;
+
+    border-radius:var(--radius-lg);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.collection-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:12px;
+
+    background:#e5e7eb;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    margin-bottom:.8rem;
+
+}
+
+.progress{
+
+    height:100%;
+
+    background:var(--primary);
+
+    border-radius:999px;
+
+}
+
+/* =========================================
+   DOCUMENTS
+========================================= */
+
+.document-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:2rem;
+
+}
+
+.document-card{
+
+    background:var(--surface);
+
+    border-radius:var(--radius-lg);
+
+    padding:2rem;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.document-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.document-card i{
+
+    font-size:3rem;
+
+    color:#dc2626;
+
+    margin-bottom:1rem;
+
+}
+
+.document-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.document-card a{
+
+    color:var(--primary);
+
+    font-weight:var(--fw-semibold);
+
+}
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:1.5rem;
+
+}
+
+.gallery-item{
+
+    aspect-ratio:1;
+
+    background:#d9d9d9;
+
+    border-radius:var(--radius-lg);
+
+    overflow:hidden;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+}
+
+.gallery-item:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:992px){
+
+    .announcement-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .officer-grid,
+    .finance-grid,
+    .collection-grid,
+    .document-grid,
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
